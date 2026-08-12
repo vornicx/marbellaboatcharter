@@ -1,8 +1,8 @@
+@import url('./luxury.css');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @layer archic.brand {
   :root {
-
     --gutter: clamp(1rem, 2vw, 2rem);
     --z-raised: 10;
     --z-header: 200;
@@ -22,14 +22,12 @@
     --brand-gold-deep: oklch(48% 0.08 70);
     --brand-line: oklch(60% 0.02 80);
     --brand-line-soft: oklch(82% 0.016 84);
-
     --bg-primary: var(--brand-ivory);
     --bg-secondary: oklch(98.2% 0.005 88);
     --bg-inverse: var(--brand-ink);
     --surface: var(--brand-white);
     --surface-2: oklch(97.4% 0.007 86);
     --surface-hover: oklch(94.8% 0.012 84);
-
     --surface-sunken: oklch(94.8% 0.01 85);
     --status-error: oklch(52% 0.18 25);
     --status-error-bg: oklch(96% 0.018 25);
@@ -41,7 +39,6 @@
     --status-info-bg: oklch(96% 0.014 230);
     --surface-overlay: oklch(99% 0.003 85 / 0.84);
     --scrim: oklch(10% 0.02 255 / 0.72);
-
     --text-primary: oklch(18% 0.02 255);
     --text-secondary: oklch(33% 0.018 248);
     --text-muted: oklch(47% 0.016 248);
@@ -49,12 +46,10 @@
     --text-link: oklch(25% 0.03 240);
     --text-link-hover: var(--brand-ink);
     --text-accent: var(--brand-gold-deep);
-
     --border-subtle: color-mix(in oklch, var(--brand-line-soft) 78%, white);
     --border-strong: color-mix(in oklch, var(--brand-line) 68%, white);
     --border-interactive: color-mix(in oklch, var(--brand-gold-deep) 70%, var(--brand-line));
     --border-focus: var(--brand-gold-deep);
-
     --interactive: var(--brand-ink);
     --interactive-hover: oklch(17% 0.02 255);
     --interactive-active: oklch(12% 0.015 255);
@@ -64,11 +59,9 @@
     --interactive-secondary: transparent;
     --interactive-secondary-hover: color-mix(in oklch, var(--brand-gold) 12%, transparent);
     --on-interactive-secondary: var(--brand-ink);
-
     --focus: var(--brand-gold-deep);
     --focus-ring-width: var(--focus-width);
     --focus-ring-offset: var(--focus-offset);
-
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Inter', Arial, sans-serif;
     --font-functional: 'Inter', Arial, sans-serif;
@@ -76,7 +69,6 @@
     --weight-body: 400;
     --weight-emphasis: 500;
     --weight-strong: 700;
-
     --fs-2xs: clamp(0.68rem, 0.67rem + 0.03vw, 0.74rem);
     --fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.82rem);
     --fs-sm: clamp(0.92rem, 0.89rem + 0.10vw, 1rem);
@@ -87,7 +79,6 @@
     --fs-3xl: clamp(3rem, 2.28rem + 2.5vw, 4.9rem);
     --fs-4xl: clamp(4rem, 2.95rem + 4vw, 6.9rem);
     --fs-5xl: clamp(4.9rem, 3.5rem + 5.7vw, 8.9rem);
-
     --radius-control: 999px;
     --radius-container: 1.8rem;
     --radius-media: 1.8rem;
@@ -98,7 +89,6 @@
     --elevation-raised: 0 24px 50px oklch(14% 0.024 255 / 0.10);
     --elevation-overlay: 0 30px 80px oklch(14% 0.024 255 / 0.20);
     --elevation-dialog: 0 36px 90px oklch(14% 0.024 255 / 0.26);
-
     --control-height-sm: 40px;
     --control-height-md: 52px;
     --control-height-lg: 58px;
@@ -107,7 +97,6 @@
     --control-gap: 0.625rem;
     --control-font-size: var(--fs-sm);
     --safe-area-gutter: 1.25rem;
-
     --motion-feedback: 100ms;
     --motion-press: 70ms;
     --motion-local: 180ms;
