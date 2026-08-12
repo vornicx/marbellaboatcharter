@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "algorithm": "sha256",
+  "frozenAt": "2026-08-12",
+  "files": {
+    "00-foundation/01-principles.md": "sha256:1750edc4c3bc5b92720a7da9ffd1f58eaeff6b43ee69f6bd9790c82244aa0111",
+    "00-foundation/02-system-architecture.md": "sha256:c7f9810e6a27e7088bcc018f67265545466a0bb0efbce6cf793577f1de826cca",
+    "00-foundation/03-invariants-and-variables.md": "sha256:6ad9bd4f62952649cbc10113d138ee0d2696a87b97ff5dd76c143e0e3bb2a18b",
+    "00-foundation/04-direction-vector.md": "sha256:8c53b0c76fa3201d1316a80d380919f6104556a72713e0796c06170550fc86b5",
+    "00-foundation/05-anti-slop-registry.md": "sha256:ae76775fdee3c9d650a7f6b1224f202ba8ec63a33d526c96c49f3ddd8ab2de4e",
+    "00-foundation/06-decision-framework.md": "sha256:5fdc945a6698701b260c81d040956e894d3a0cf9371c80dc59566c3abad2919c",
+    "00-foundation/FROZEN.md": "sha256:d932da1fde2a396a20a6d3c3b52b15cff7fefb478b1822e8255150a9e72bda50",
+    "01-tokens/foundation.css": "sha256:23040fe680e937374b5244ab0f624fb0fd353fb076a9e28d149e42d7641dfc0c"
+  }
+}
