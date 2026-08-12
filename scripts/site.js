@@ -3,6 +3,13 @@ import { fleet } from '../data/fleet.js';
 const qs = (selector, root = document) => root.querySelector(selector);
 const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 
+const siteHeader = qs('.site-header');
+if (siteHeader) {
+  const syncHeader = () => siteHeader.classList.toggle('is-scrolled', window.scrollY > 24);
+  syncHeader();
+  window.addEventListener('scroll', syncHeader, { passive: true });
+}
+
 const menuButton = qs('[data-menu-toggle]');
 const mobileNav = qs('[data-mobile-nav]');
 if (menuButton && mobileNav) {
@@ -50,32 +57,21 @@ qsa('[data-dispatch-form]').forEach(form => {
     event.preventDefault();
     if (!form.reportValidity()) return;
     const status = qs('[data-dispatch-status]', form);
-    const data = Object.fromEntries(new FormData(form));
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    data.consent = formData.get('consent') === 'true';
     if (status) status.textContent = 'Sending your charter brief…';
-
     try {
-      const response = await fetch('/api/enquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, source: 'website-charter-desk', page: location.pathname })
-      });
-      if (!response.ok) throw new Error('API unavailable');
+      const response = await fetch('/api/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...data, source: 'website-charter-desk', page: location.pathname }) });
       const result = await response.json();
-      if (status) status.textContent = result.message || 'Request received. The charter team will follow up directly.';
+      if (!response.ok) throw new Error(result.error || 'API unavailable');
+      if (result.delivery === 'accepted_not_connected') throw new Error('delivery_not_connected');
+      if (status) status.textContent = result.message || `Request received · ${result.reference || 'confirmed'}. The charter team will follow up directly.`;
       form.reset();
       return;
     } catch (_) {
-      const lines = [
-        'Hello Marbella Boat Charter, I would like to check availability.', '',
-        `Name: ${data.name || ''}`,
-        `Preferred date: ${data.date || 'To discuss'}`,
-        `Guests: ${data.guests || 'To discuss'}`,
-        `Duration: ${data.duration || 'To discuss'}`,
-        `Departure area: ${data.port || 'Flexible'}`,
-        `Plan / yacht: ${data.plan || 'Open to recommendation'}`,
-        `Extra detail: ${data.notes || 'None'}`
-      ];
-      if (status) status.textContent = 'Secure form storage is not configured on this deployment. Opening WhatsApp instead…';
+      const lines = ['Hello Marbella Boat Charter, I would like to check availability.', '', `Name: ${data.name || ''}`, `Phone: ${data.phone || ''}`, `Email: ${data.email || 'Not provided'}`, `Preferred date: ${data.date || 'To discuss'}`, `Guests: ${data.guests || 'To discuss'}`, `Duration: ${data.duration || 'To discuss'}`, `Departure area: ${data.port || 'Flexible'}`, `Plan / yacht: ${data.plan || 'Open to recommendation'}`, `Budget context: ${data.budget || 'Open to recommendation'}`, `Extra detail: ${data.notes || 'None'}`];
+      if (status) status.textContent = 'The direct form channel is not connected on this deployment. Opening WhatsApp with the same brief instead…';
       window.open(`https://wa.me/34682252526?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
     }
   });
