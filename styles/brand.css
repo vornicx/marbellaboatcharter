@@ -1,25 +1,24 @@
 /* ========================================================================== 
-   MARBELLA BOAT CHARTER — BRAND LAYER
-   Archic Foundation 1.0.0
-   Direction: D5 V3 G5 T2 E3 K1 — Lead Data/Type — Distance 4
-   Archetype: Dossier + Editorial Spread
-   Visual thesis: Coastal navigation office / chart room, not luxury costume.
+   MARBELLA BOAT CHARTER — BRAND LAYER v0.3
+   Direction: Luxury editorial / private charter concierge
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @layer archic.brand {
   :root {
-    --brand-chart: oklch(96.5% 0.010 86);
-    --brand-paper: oklch(98.4% 0.006 88);
-    --brand-ink: oklch(18% 0.025 224);
-    --brand-ink-2: oklch(27% 0.030 224);
-    --brand-sea: oklch(41% 0.075 207);
-    --brand-sea-deep: oklch(29% 0.040 214);
-    --brand-line: oklch(64% 0.018 218);
-    --brand-line-soft: oklch(88% 0.014 215);
-    --brand-signal: oklch(61% 0.155 42);
-    --brand-signal-dark: oklch(49% 0.135 39);
-    --brand-white: oklch(99.6% 0.002 90);
+    --brand-night: oklch(14% 0.015 260);
+    --brand-night-soft: oklch(20% 0.018 255);
+    --brand-navy: oklch(24% 0.030 248);
+    --brand-sea: oklch(41% 0.050 226);
+    --brand-sea-soft: oklch(74% 0.032 215);
+    --brand-cream: oklch(96.5% 0.014 85);
+    --brand-stone: oklch(90% 0.018 84);
+    --brand-sand: oklch(82% 0.050 76);
+    --brand-gold: oklch(72% 0.090 76);
+    --brand-gold-deep: oklch(46% 0.085 66);
+    --brand-white: oklch(99% 0.002 90);
+    --brand-line: oklch(61% 0.028 80);
+    --brand-line-soft: oklch(85% 0.018 84);
     --brand-error: oklch(42% 0.135 28);
     --brand-error-bg: oklch(95% 0.014 28);
     --brand-success: oklch(38% 0.070 156);
@@ -29,40 +28,40 @@
     --brand-info: oklch(39% 0.070 220);
     --brand-info-bg: oklch(95% 0.020 220);
 
-    --bg-primary: var(--brand-paper);
-    --bg-secondary: var(--brand-chart);
-    --bg-inverse: var(--brand-ink);
+    --bg-primary: var(--brand-cream);
+    --bg-secondary: oklch(98% 0.008 88);
+    --bg-inverse: var(--brand-night);
     --surface: var(--brand-white);
-    --surface-hover: oklch(95% 0.018 203);
-    --surface-sunken: oklch(93% 0.010 215);
-    --surface-overlay: var(--brand-paper);
-    --scrim: oklch(13% 0.025 224 / 0.76);
+    --surface-hover: oklch(94.5% 0.018 83);
+    --surface-sunken: oklch(93% 0.010 84);
+    --surface-overlay: oklch(98% 0.008 88 / 0.94);
+    --scrim: oklch(11% 0.020 258 / 0.74);
 
-    --text-primary: var(--brand-ink);
-    --text-secondary: oklch(31% 0.028 224);
-    --text-muted: oklch(43% 0.020 224);
-    --text-inverse: var(--brand-chart);
+    --text-primary: oklch(19% 0.020 260);
+    --text-secondary: oklch(32% 0.018 250);
+    --text-muted: oklch(46% 0.016 250);
+    --text-inverse: var(--brand-cream);
     --text-on-media: var(--brand-white);
-    --text-accent: var(--brand-sea-deep);
-    --text-link: var(--brand-sea-deep);
-    --text-link-hover: var(--brand-ink);
+    --text-accent: var(--brand-gold-deep);
+    --text-link: oklch(26% 0.030 246);
+    --text-link-hover: var(--brand-night);
 
-    --border-subtle: var(--brand-line-soft);
-    --border-strong: var(--brand-line);
-    --border-interactive: oklch(61% 0.030 218);
-    --border-focus: var(--brand-sea);
+    --border-subtle: color-mix(in oklch, var(--brand-line-soft) 82%, white);
+    --border-strong: color-mix(in oklch, var(--brand-line) 85%, white);
+    --border-interactive: color-mix(in oklch, var(--brand-gold-deep) 78%, var(--brand-line));
+    --border-focus: var(--brand-gold-deep);
 
-    --interactive: var(--brand-ink);
-    --interactive-hover: var(--brand-sea-deep);
-    --interactive-active: oklch(14% 0.023 224);
+    --interactive: var(--brand-night);
+    --interactive-hover: oklch(18% 0.020 260);
+    --interactive-active: oklch(12% 0.018 260);
     --interactive-disabled: oklch(79% 0.010 218);
     --on-interactive: var(--brand-white);
     --on-interactive-disabled: oklch(45% 0.016 218);
     --interactive-secondary: transparent;
-    --interactive-secondary-hover: oklch(94% 0.018 205);
-    --on-interactive-secondary: var(--brand-ink);
+    --interactive-secondary-hover: color-mix(in oklch, var(--brand-sand) 18%, transparent);
+    --on-interactive-secondary: var(--brand-night);
 
-    --focus: var(--brand-signal-dark);
+    --focus: var(--brand-gold-deep);
     --focus-ring-width: var(--focus-width);
     --focus-ring-offset: var(--focus-offset);
 
@@ -75,9 +74,9 @@
     --status-info: var(--brand-info);
     --status-info-bg: var(--brand-info-bg);
 
-    --font-display: 'Manrope', Arial, sans-serif;
-    --font-body: 'Manrope', Arial, sans-serif;
-    --font-functional: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Inter', Arial, sans-serif;
+    --font-functional: 'Inter', Arial, sans-serif;
     --weight-display: 600;
     --weight-body: 400;
     --weight-emphasis: 500;
@@ -85,49 +84,49 @@
 
     --fs-2xs: clamp(0.68rem, 0.67rem + 0.03vw, 0.74rem);
     --fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.82rem);
-    --fs-sm: clamp(0.88rem, 0.85rem + 0.10vw, 0.96rem);
+    --fs-sm: clamp(0.9rem, 0.87rem + 0.10vw, 0.98rem);
     --fs-md: clamp(1rem, 0.98rem + 0.10vw, 1.08rem);
-    --fs-lg: clamp(1.16rem, 1.10rem + 0.25vw, 1.34rem);
-    --fs-xl: clamp(1.45rem, 1.32rem + 0.55vw, 1.84rem);
-    --fs-2xl: clamp(1.9rem, 1.62rem + 1.05vw, 2.7rem);
-    --fs-3xl: clamp(2.65rem, 2.1rem + 2.1vw, 4.2rem);
-    --fs-4xl: clamp(3.6rem, 2.55rem + 4.1vw, 6.6rem);
-    --fs-5xl: clamp(4.5rem, 2.9rem + 6.4vw, 9.4rem);
+    --fs-lg: clamp(1.18rem, 1.11rem + 0.28vw, 1.38rem);
+    --fs-xl: clamp(1.54rem, 1.38rem + 0.60vw, 1.98rem);
+    --fs-2xl: clamp(2.1rem, 1.78rem + 1.20vw, 3rem);
+    --fs-3xl: clamp(3rem, 2.36rem + 2.40vw, 4.75rem);
+    --fs-4xl: clamp(4.25rem, 3rem + 4.6vw, 7.6rem);
+    --fs-5xl: clamp(5.3rem, 3.55rem + 6.7vw, 10.2rem);
 
-    --radius-control: var(--radius-none);
-    --radius-container: var(--radius-none);
-    --radius-media: var(--radius-none);
-    --radius-pill: var(--radius-none);
+    --radius-control: 999px;
+    --radius-container: 1.75rem;
+    --radius-media: 1.75rem;
+    --radius-pill: 999px;
     --border-width-control: var(--border-thin);
     --border-width-container: var(--border-thin);
     --border-width-divider: var(--border-thin);
-    --elevation-raised: none;
-    --elevation-overlay: none;
-    --elevation-dialog: none;
+    --elevation-raised: 0 24px 50px oklch(15% 0.025 258 / 0.10);
+    --elevation-overlay: 0 28px 70px oklch(14% 0.025 258 / 0.18);
+    --elevation-dialog: 0 35px 90px oklch(14% 0.025 258 / 0.24);
 
     --control-height-sm: 40px;
-    --control-height-md: 48px;
-    --control-height-lg: 56px;
-    --control-pad-x: 1rem;
-    --control-pad-y: 0.75rem;
+    --control-height-md: 50px;
+    --control-height-lg: 58px;
+    --control-pad-x: 1.1rem;
+    --control-pad-y: 0.8rem;
     --control-gap: 0.625rem;
     --control-font-size: var(--fs-sm);
     --safe-area-gutter: 1.25rem;
 
     --motion-feedback: 100ms;
-    --motion-press: 60ms;
+    --motion-press: 70ms;
     --motion-local: 180ms;
-    --motion-container: 300ms;
-    --motion-page: 460ms;
+    --motion-container: 320ms;
+    --motion-page: 480ms;
     --motion-ease: cubic-bezier(.2,.72,.2,1);
     --motion-ease-exit: cubic-bezier(.5,0,1,1);
-    --motion-stagger: 45ms;
+    --motion-stagger: 55ms;
 
-    --media-filter: saturate(.92) contrast(1.02);
-    --media-filter-hover: saturate(1) contrast(1.02);
-    --media-scrim: linear-gradient(180deg, transparent 38%, oklch(15% 0.025 224 / .66) 100%);
-    --media-ratio-hero: 3 / 2;
-    --media-ratio-card: 3 / 2;
+    --media-filter: saturate(.92) contrast(1.05);
+    --media-filter-hover: saturate(1) contrast(1.05);
+    --media-scrim: linear-gradient(180deg, transparent 32%, oklch(13% 0.024 258 / .78) 100%);
+    --media-ratio-hero: 16 / 10;
+    --media-ratio-card: 4 / 3;
     --media-ratio-mobile: 4 / 5;
   }
 }
