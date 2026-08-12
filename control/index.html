@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Marbella Boat Charter Control</title>
+  <link rel="stylesheet" href="control.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Control navigation">
+      <a class="brand" href="/control/"><span class="brand-mark">M</span><span><strong>Marbella Boat Charter</strong><small>Control</small></span></a>
+      <nav>
+        <a class="active" href="#overview">Overview</a>
+        <a href="#bookings">Bookings</a>
+        <a href="#leads">Leads & CRM</a>
+        <a href="#quotes">Quotes & payments</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#availability">Availability</a>
+        <a href="#owners">Owners</a>
+        <a href="#crew">Crew</a>
+        <a href="#maintenance">Maintenance</a>
+        <a href="#catering">Catering & extras</a>
+        <a href="#content">Content & SEO</a>
+        <a href="#reports">Reports</a>
+      </nav>
+      <div class="sidebar-note">Operational workspace shell. Production data requires authenticated backend connection.</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><span class="eyebrow">Operations / today</span><h1>Good afternoon.</h1></div>
+        <div class="top-actions"><button type="button" data-command>Command</button><button class="primary" type="button">New booking</button></div>
+      </header>
+
+      <section id="overview" class="section">
+        <div class="status-strip" aria-label="Connection status">
+          <span class="status-dot"></span>
+          <strong>Platform architecture ready</strong>
+          <span>Connect the production database and notification adapters before using Control with real client data.</span>
+        </div>
+        <div class="metric-grid">
+          <article><span>Open enquiries</span><strong>—</strong><small>Live once CRM is connected</small></article>
+          <article><span>Confirmed charters</span><strong>—</strong><small>Calendar source pending</small></article>
+          <article><span>Outstanding balance</span><strong>—</strong><small>Payment provider pending</small></article>
+          <article><span>Fleet attention</span><strong>—</strong><small>Maintenance feed pending</small></article>
+        </div>
+      </section>
+
+      <section id="bookings" class="section panel-section">
+        <div class="section-head"><div><span class="eyebrow">Bookings</span><h2>One operational timeline from enquiry to completion.</h2></div><button type="button">Calendar view</button></div>
+        <div class="workflow">
+          <div><span>01</span><strong>Enquiry</strong><p>Date, guests, itinerary, preferred vessel and extras.</p></div>
+          <div><span>02</span><strong>Option</strong><p>Temporary vessel hold while the quote is reviewed.</p></div>
+          <div><span>03</span><strong>Deposit</strong><p>Deposit received and commercial terms accepted.</p></div>
+          <div><span>04</span><strong>Confirmed</strong><p>Crew, catering, route and operational preparation.</p></div>
+          <div><span>05</span><strong>Completed</strong><p>Client history, owner reporting and post-charter follow-up.</p></div>
+        </div>
+      </section>
+
+      <section id="leads" class="section panel-section">
+        <div class="section-head"><div><span class="eyebrow">Leads & CRM</span><h2>Every enquiry becomes a client record, not a lost WhatsApp message.</h2></div></div>
+        <div class="two-col">
+          <article class="card"><h3>Qualification</h3><ul><li>Source and campaign attribution</li><li>Preferred date / duration / departure</li><li>Guest count and experience intent</li><li>Preferred vessel and budget context</li><li>Assigned team member and response time</li></ul></article>
+          <article class="card"><h3>Client memory</h3><ul><li>First and last enquiry</li><li>Completed charters</li><li>Cancellations / no-shows</li><li>Preferred party size and vessel class</li><li>Internal notes and communication history</li></ul></article>
+        </div>
+      </section>
+
+      <section id="quotes" class="section panel-section">
+        <div class="section-head"><div><span class="eyebrow">Quotes & payments</span><h2>Commercial detail belongs in the system.</h2></div></div>
+        <div class="three-col">
+          <article class="card"><span class="card-number">01</span><h3>Quote builder</h3><p>Charter, fuel rules, catering, mooring, transfers, discounts, tax and expiry.</p></article>
+          <article class="card"><span class="card-number">02</span><h3>Deposit & balance</h3><p>Track due, partial, paid, refunded and failed states without using spreadsheets.</p></article>
+          <article class="card"><span class="card-number">03</span><h3>Audit</h3><p>Snapshot commercial terms so later changes never rewrite what the client accepted.</p></article>
+        </div>
+      </section>
+
+      <section id="fleet" class="section panel-section">
+        <div class="section-head"><div><span class="eyebrow">Fleet</span><h2>Commercial rules are vessel-specific.</h2></div></div>
+        <div class="table-like">
+          <div class="table-head"><span>Vessel</span><span>Status</span><span>Rates</span><span>Availability</span><span>Owner</span></div>
+          <div class="empty-row"><strong>Connect fleet data</strong><span>The platform schema supports vessel media, seasonal rate plans, inclusions, exclusions, toys, owner relationship and publishing state.</span></div>
+        </div>
+      </section>
+
+      <section id="owners" class="section panel-section">
+        <div class="section-head"><div><span class="eyebrow">Owners</span><h2>Operations and owner transparency from the same source of truth.</h2></div></div>
+        <div class="two-col">
+          <article class="card"><h3>Owner workspace</h3><p>Charter calendar, owner-use blocks, approved financial statements, maintenance status, documents and vessel performance.</p></article>
+          <article class="card"><h3>Privacy boundary</h3><p>Owner access must be scoped to mapped vessels and explicit views. No owner receives blanket CRM, booking or fleet access.</p></article>
+        </div>
+      </section>
+
+      <section id="maintenance" class="section panel-section">
+        <div class="section-head"><div><span class="eyebrow">Maintenance</span><h2>A charter business cannot separate sales from vessel readiness.</h2></div></div>
+        <div class="workflow compact"><div><strong>Planned</strong></div><div><strong>Scheduled</strong></div><div><strong>In progress</strong></div><div><strong>Completed</strong></div></div>
+      </section>
+
+      <section id="content" class="section panel-section">
+        <div class="section-head"><div><span class="eyebrow">Content, SEO & GEO</span><h2>First-party expertise should be operationally publishable.</h2></div></div>
+        <div class="three-col">
+          <article class="card"><h3>Content</h3><p>Vessels, experiences, destinations, guides and FAQs in EN / ES / FR.</p></article>
+          <article class="card"><h3>Search</h3><p>Metadata, canonicals, internal linking, redirects, structured facts and sitemap state.</p></article>
+          <article class="card"><h3>Quality</h3><p>Rights status for media, publication review and explicit source-of-truth checks for pricing.</p></article>
+        </div>
+      </section>
+
+      <section id="reports" class="section panel-section">
+        <div class="section-head"><div><span class="eyebrow">Reports</span><h2>Measure the business, not vanity traffic.</h2></div></div>
+        <div class="feature-list"><span>Lead → quote conversion</span><span>Quote → booking conversion</span><span>Average charter value</span><span>Response time</span><span>Revenue by vessel</span><span>Utilisation</span><span>Source performance</span><span>Repeat clients</span></div>
+      </section>
+    </main>
+  </div>
+  <script src="control.js"></script>
+</body>
+</html>
