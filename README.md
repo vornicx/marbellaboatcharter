@@ -1,59 +1,37 @@
 # Marbella Boat Charter × Archic
 
-Production-oriented project foundation based on **Archic Design System v1.0.0**, now reworked into a **v0.3 luxury editorial direction**.
+Current local project direction: **luxury-first rebuild v1**.
 
-## v0.3 direction
+## Intent
 
-The project treats Marbella Boat Charter as a **premium Costa del Sol charter operator based in Puerto Banús**, not as a Puerto Banús-only rental listing and not as another repeated Archic marketing template.
+This rebuild intentionally moves away from a visible design-system feel and toward a more bespoke luxury-web direction suited to:
 
-The visible direction is now:
+- Puerto Banús / Marbella positioning
+- premium yacht charter expectations
+- international high-end clientele
+- stronger visual presence and calmer hierarchy
 
-- **luxury editorial** rather than system-first;
-- **private charter concierge** rather than catalogue-first;
-- **calm, spacious and aspirational** rather than overtly technical;
-- **broader business scope**, including motor yachts, sailing, fishing, group events, catering and yacht management;
-- **Costa del Sol positioning**, not a narrow Puerto Banús-only framing.
+## What changed in this rebuild
 
-## Key page moves
+- **Home** rebuilt around a stronger hero, higher-end copy and curated featured yachts.
+- **Fleet** reframed as a calm premium register rather than a repetitive card wall.
+- **Experiences** rewritten as a set of sellable charter formats.
+- **Sunseeker 68** rebuilt as a flagship-style yacht detail page.
+- **Contact** rebuilt as a charter desk / concierge-style enquiry flow.
+- **Brand/CSS** rebuilt around darker navy, ivory and subtle gold tones with more premium spacing and typography.
 
-- **Home** now leads with a premium hero, stronger positioning and a curated vessel selection.
-- **Fleet** is presented as a calm, elegant register rather than a repetitive card wall.
-- **Experiences** reframes routes and offers as curated charter formats.
-- **Yacht spotlight** presents the Sunseeker 68 as a premium flagship example.
-- **Contact** works as a charter desk and hands the enquiry into WhatsApp with a structured brief.
+## Notes
 
-## Current inventory represented
+This remains a prototype-quality front-end concept until the following are provided by the client:
 
-- 23 motor yachts
-- 2 sailing boats
-- 3 fishing boats
-- 2 group vessels
+1. final approved photography / video assets
+2. final fleet verification and live rate confirmation
+3. legal / privacy / cookie material
+4. production booking or CRM requirements
+5. multilingual production content
 
-The data is based on the operator's public listings and remains subject to client verification before production.
-
-## Production gate
-
-`project.config.json` remains in `prototype` mode because original/high-resolution photography and fully verified brand/legal assets have not yet been authorised and signed off.
-
-Before launch:
-
-1. verify current fleet, rates, VAT, fuel and vessel-specific inclusions with the client;
-2. acquire authorised high-resolution fleet / crew / destination photography or video;
-3. implement final Spanish parity and multilingual review;
-4. migrate / review privacy, cookie and booking/legal terms;
-5. connect a booking / CRM backend if the client wants more than the current direct WhatsApp handoff;
-6. run final real-device and network QA.
-
-## Run locally
+## Local run
 
 ```bash
 python -m http.server 4173
-```
-
-## Archic gates
-
-```bash
-node tools/static-audit.mjs .
-node tools/contrast.mjs styles/brand.css
-node /path/to/archic-design-system/tools/validate-contract.mjs styles/brand.css
 ```
