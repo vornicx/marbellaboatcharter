@@ -52,6 +52,27 @@ qsa('[data-plan]').forEach(field => {
   } else if (requestedPlan) field.value = requestedPlan;
 });
 
+const prefill = (name, value) => {
+  if (!value) return;
+  const control = qs(`[name="${name}"]`);
+  if (!control) return;
+  if (control instanceof RadioNodeList) return;
+  if (control.tagName === 'SELECT') {
+    const option = [...control.options].find(item => item.value === value || item.textContent.trim() === value);
+    if (option) control.value = option.value;
+    return;
+  }
+  control.value = value;
+};
+prefill('guests', params.get('guests'));
+prefill('port', params.get('port'));
+const requestedDuration = params.get('duration');
+if (requestedDuration) {
+  const radio = qsa('input[name="duration"]').find(input => input.value === requestedDuration);
+  if (radio) radio.checked = true;
+  else prefill('duration', requestedDuration);
+}
+
 qsa('[data-dispatch-form]').forEach(form => {
   form.addEventListener('submit', async event => {
     event.preventDefault();
