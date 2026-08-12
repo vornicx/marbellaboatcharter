@@ -1,0 +1,62 @@
+@layer archic.components {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { color-scheme: light; scrollbar-gutter: stable; scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--font-body); font-size: var(--fs-md); line-height: 1.58; color: var(--text-primary); background: var(--bg-primary); text-rendering: optimizeLegibility; }
+  img { display: block; max-width: 100%; }
+  button, input, select, textarea { font: inherit; }
+  a { color: inherit; }
+  :focus-visible { outline: var(--focus-ring-width) solid var(--focus); outline-offset: var(--focus-ring-offset); }
+  ::selection { background: var(--interactive); color: var(--on-interactive); }
+
+  .skip-link { position: fixed; inset-inline-start: 1rem; inset-block-start: 1rem; transform: translateY(-200%); z-index: var(--z-dialog); background: var(--interactive); color: var(--on-interactive); padding: .75rem 1rem; text-decoration: none; }
+  .skip-link:focus { transform: translateY(0); }
+
+  .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--control-gap); min-height: var(--control-height-md); padding-inline: var(--control-pad-x); border: var(--border-width-control) solid transparent; border-radius: var(--radius-control); font-family: var(--font-functional); font-size: var(--control-font-size); font-weight: var(--weight-emphasis); letter-spacing: -.01em; cursor: pointer; text-decoration: none; user-select: none; -webkit-tap-highlight-color: transparent; transition: background-color var(--motion-feedback) var(--motion-ease), border-color var(--motion-feedback) var(--motion-ease), color var(--motion-feedback) var(--motion-ease), transform var(--motion-press) var(--motion-ease); }
+  .btn[data-variant="primary"] { background: var(--interactive); color: var(--on-interactive); }
+  .btn[data-variant="secondary"] { background: var(--interactive-secondary); color: var(--on-interactive-secondary); border-color: var(--border-interactive); }
+  .btn[data-variant="text"] { min-height: 44px; padding-inline: 0; background: transparent; color: var(--text-primary); border-color: transparent; border-block-end-color: var(--border-strong); }
+  @media (hover: hover) and (pointer: fine) {
+    .btn[data-variant="primary"]:hover { background: var(--interactive-hover); }
+    .btn[data-variant="secondary"]:hover { background: var(--interactive-secondary-hover); }
+    .btn[data-variant="text"]:hover { color: var(--text-accent); border-block-end-color: var(--text-accent); }
+  }
+  .btn:active { transform: translateY(1px); transition-duration: var(--motion-press); }
+  .btn:disabled { background: var(--interactive-disabled); color: var(--on-interactive-disabled); cursor: not-allowed; }
+  .btn[data-loading] { cursor: wait; pointer-events: none; }
+  .btn[data-loading] .btn__label { visibility: hidden; }
+  .btn__spinner { display: none; position: absolute; inset: 0; place-items: center; }
+  .btn[data-loading] .btn__spinner { display: grid; }
+
+  .icon-btn { display: inline-grid; place-items: center; width: var(--control-height-md); height: var(--control-height-md); border: var(--border-width-control) solid var(--border-interactive); background: var(--surface-overlay); color: var(--text-primary); cursor: pointer; border-radius: var(--radius-control); transition: background var(--motion-feedback) var(--motion-ease); }
+  @media (hover: hover) and (pointer: fine) { .icon-btn:hover { background: var(--surface-hover); } }
+
+  .field { display: grid; gap: .5rem; }
+  .field__label { font-family: var(--font-functional); font-size: var(--fs-xs); line-height: 1.2; font-weight: var(--weight-strong); letter-spacing: .06em; text-transform: uppercase; }
+  .field__control { width: 100%; min-height: var(--control-height-lg); padding-inline: var(--control-pad-x); border: var(--border-width-control) solid var(--border-interactive); border-radius: var(--radius-control); background: var(--surface); color: var(--text-primary); transition: border-color var(--motion-feedback) var(--motion-ease), background var(--motion-feedback) var(--motion-ease); }
+  .field__control::placeholder { color: var(--text-muted); }
+  .field__control:hover { border-color: var(--border-strong); }
+  .field__control[aria-invalid="true"] { border-color: var(--status-error); }
+  .field__hint { margin: 0; color: var(--text-muted); font-size: var(--fs-sm); }
+  .field__error { margin: 0; color: var(--status-error); font-size: var(--fs-sm); }
+
+  .chip { display: inline-flex; align-items: center; min-height: 40px; padding-inline: .9rem; border: var(--border-width-control) solid var(--border-interactive); background: transparent; color: var(--text-primary); border-radius: var(--radius-pill); font-size: var(--fs-sm); cursor: pointer; transition: background var(--motion-feedback) var(--motion-ease), color var(--motion-feedback) var(--motion-ease); }
+  .chip[aria-pressed="true"] { background: var(--interactive); color: var(--on-interactive); border-color: var(--interactive); }
+
+  .drawer[hidden] { display: none; }
+  .drawer { position: fixed; inset: 0; z-index: var(--z-dialog); }
+  .drawer__scrim { position: absolute; inset: 0; background: var(--scrim); opacity: 0; transition: opacity var(--motion-container) var(--motion-ease); }
+  .drawer__panel { position: absolute; inset-block: 0; inset-inline-end: 0; width: min(100%, 38rem); overflow-y: auto; overscroll-behavior: contain; background: var(--surface-overlay); border-inline-start: var(--border-width-container) solid var(--border-subtle); transform: translateX(100%); transition: transform var(--motion-container) var(--motion-ease); }
+  .drawer[data-open="true"] .drawer__scrim { opacity: 1; }
+  .drawer[data-open="true"] .drawer__panel { transform: translateX(0); }
+
+  .calendar { border: var(--border-width-container) solid var(--border-subtle); background: var(--surface); }
+  .calendar__head { display: flex; align-items: center; justify-content: space-between; padding: 1rem; border-block-end: var(--border-width-divider) solid var(--border-subtle); }
+  .calendar__grid { display: grid; grid-template-columns: repeat(7, 1fr); padding: .75rem; gap: .25rem; }
+  .calendar__dow { font-size: var(--fs-xs); color: var(--text-muted); text-align: center; padding-block: .5rem; }
+  .calendar__day { min-width: 44px; min-height: 44px; border: 0; background: transparent; color: var(--text-primary); cursor: pointer; }
+  .calendar__day[data-outside="true"] { color: var(--text-muted); opacity: .62; }
+  .calendar__day[aria-selected="true"] { background: var(--interactive); color: var(--on-interactive); }
+  .calendar__day:disabled { color: var(--text-muted); opacity: .45; cursor: not-allowed; }
+
+  .visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important; }
+}
