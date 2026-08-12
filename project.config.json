@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0",
+  "project": {
+    "name": "Marbella Boat Charter × Archic",
+    "slug": "marbella-boat-charter",
+    "mode": "prototype",
+    "kind": "marketing",
+    "sector": "Private boat and yacht charter in Puerto Banús / Costa del Sol",
+    "decisionDate": "2026-08-12"
+  },
+  "direction": {
+    "density": 4,
+    "volume": 2,
+    "geometry": 4,
+    "temperature": 2,
+    "era": 4,
+    "kinetics": 2,
+    "leadMedium": "Data",
+    "distance": 3,
+    "primaryArchetype": "Index",
+    "secondaryArchetype": "Editorial Spread",
+    "justification": "The business has a large, directly comparable fleet and customers need to resolve capacity, duration and price before emotion. The interface therefore treats the fleet as a typographic index, then shifts into editorial imagery and dossier-like detail at genuine decision boundaries.",
+    "sectorsUnrelatedToPrevious": false,
+    "archetypeRepeatJustification": ""
+  },
+  "assets": {
+    "policy": "representative-with-provenance",
+    "provenanceFile": "docs/asset-provenance.md",
+    "verified": false
+  },
+  "foundation": {
+    "version": "1.0.0"
+  },
+  "exceptions": []
+}
