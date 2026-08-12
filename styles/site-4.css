@@ -1,0 +1,156 @@
+@layer archic.site {
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1.1rem 0;
+    font-family: var(--font-functional);
+    font-size: var(--fs-2xs);
+    color: color-mix(in oklch, var(--brand-white) 55%, transparent);
+  }
+
+.footer-blurb { margin-top: 1.5rem; color: color-mix(in oklch, var(--brand-white) 64%, transparent); }
+
+.route-stop__main h3 { margin: 0 0 1rem; font-size: var(--fs-3xl); line-height: 1; letter-spacing: -.05em; }
+
+.technical-drawing { color: color-mix(in oklch, var(--brand-white) 82%, transparent); display: grid; place-items: center; }
+
+.yacht-profile { width: min(92%, 62rem); height: auto; position: relative; z-index: var(--z-base); }
+
+.drawing-note { position: absolute; z-index: var(--z-raised); left: 1.5rem; right: 1.5rem; bottom: 1.5rem; margin: 0; max-width: 34rem; font-family: var(--font-functional); font-size: var(--fs-2xs); color: color-mix(in oklch, var(--brand-white) 62%, transparent); }
+
+/* -----------------------------------------------------------------------
+     INNER PAGE MASTHEAD
+     ----------------------------------------------------------------------- */
+  .chart-masthead { border-block-end: 1px solid var(--border-strong); }
+
+.chart-masthead__grid {
+    min-height: 32rem;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    border-inline: 1px solid var(--border-subtle);
+  }
+
+.chart-masthead__title { padding: clamp(3rem, 7vw, 7rem); display: flex; flex-direction: column; justify-content: space-between; border-inline-end: 1px solid var(--border-strong); }
+
+.chart-masthead__title .display { max-width: 10ch; }
+
+.chart-masthead__aside { padding: clamp(2rem, 4vw, 4rem); display: flex; flex-direction: column; justify-content: flex-end; gap: 1.5rem; background: var(--brand-chart); }
+
+.masthead-ledger { margin: 0; display: grid; gap: .8rem; }
+
+.masthead-ledger div { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; padding-block-start: .8rem; border-block-start: 1px solid var(--border-subtle); }
+
+.masthead-ledger dt { font-family: var(--font-functional); font-size: var(--fs-xs); color: var(--text-muted); text-transform: uppercase; }
+
+.masthead-ledger dd { margin: 0; font-size: var(--fs-sm); }
+
+/* -----------------------------------------------------------------------
+     FLEET PAGE
+     ----------------------------------------------------------------------- */
+  .fleet-register { border-block-start: 1px solid var(--border-strong); }
+
+.fleet-group { border-block-end: 1px solid var(--border-strong); }
+
+.fleet-group__head {
+    min-height: 5rem;
+    display: grid;
+    grid-template-columns: 7rem 1fr auto;
+    align-items: center;
+    background: var(--brand-chart);
+    border-inline: 1px solid var(--border-subtle);
+  }
+
+.fleet-group__head > * { padding-inline: 1rem; }
+
+.fleet-group__head .mono { color: var(--brand-signal-dark); font-size: var(--fs-xs); }
+
+.fleet-group__head h2 { margin: 0; font-size: var(--fs-2xl); letter-spacing: -.04em; }
+
+.fleet-group__head span:last-child { font-family: var(--font-functional); font-size: var(--fs-xs); color: var(--text-muted); }
+
+.fleet-table-head, .fleet-entry {
+    display: grid;
+    grid-template-columns: 4rem minmax(13rem, 1.25fr) 7rem 6rem minmax(12rem, 1fr) 8rem;
+    border-inline: 1px solid var(--border-subtle);
+  }
+
+.fleet-table-head { min-height: 2.8rem; align-items: center; font-family: var(--font-functional); font-size: var(--fs-2xs); color: var(--text-muted); text-transform: uppercase; }
+
+.fleet-table-head > *, .fleet-entry > * { padding-inline: .9rem; }
+
+.fleet-table-head > *:not(:last-child), .fleet-entry > *:not(:last-child) { border-inline-end: 1px solid var(--border-subtle); }
+
+.fleet-entry { min-height: 5.1rem; align-items: stretch; border-block-start: 1px solid var(--border-subtle); text-decoration: none; }
+
+.fleet-entry > * { display: flex; align-items: center; }
+
+.fleet-entry__index, .fleet-entry__pax, .fleet-entry__length, .fleet-entry__price { font-family: var(--font-functional); font-size: var(--fs-xs); font-variant-numeric: tabular-nums; }
+
+.fleet-entry__name { font-weight: 600; letter-spacing: -.025em; }
+
+.fleet-entry__route { color: var(--text-secondary); font-size: var(--fs-sm); }
+
+.fleet-entry__price { justify-content: flex-end; text-align: right; }
+
+.fleet-entry:hover { background: var(--brand-ink); color: var(--brand-white); }
+
+.fleet-entry:hover .fleet-entry__route { color: color-mix(in oklch, var(--brand-white) 68%, transparent); }
+
+.fleet-note { padding-block: 1.2rem; font-family: var(--font-functional); font-size: var(--fs-xs); color: var(--text-muted); }
+
+/* -----------------------------------------------------------------------
+     EXPERIENCES / ROUTES
+     ----------------------------------------------------------------------- */
+  .route-atlas { position: relative; }
+
+.route-atlas__axis {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--gutter) + 4.25rem);
+    width: 1px;
+    background: var(--border-strong);
+  }
+
+.route-stop {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr) minmax(18rem, .55fr);
+    min-height: 15rem;
+    border-block-start: 1px solid var(--border-strong);
+  }
+
+.route-stop:last-child { border-block-end: 1px solid var(--border-strong); }
+
+.route-stop__code { position: relative; padding: 2rem 1rem 2rem 0; font-family: var(--font-functional); font-size: var(--fs-xs); color: var(--brand-signal-dark); }
+
+.route-stop__code::after { content: ''; position: absolute; top: 2.25rem; right: calc(4.25rem - 4px); width: 7px; height: 7px; background: var(--brand-signal); transform: rotate(45deg); }
+
+.route-stop__main { padding: 2rem clamp(2rem, 5vw, 5rem); border-inline: 1px solid var(--border-subtle); }
+
+.route-stop__main h2 { margin: 0 0 1rem; font-size: var(--fs-3xl); letter-spacing: -.05em; }
+
+.route-stop__main p { margin: 0; max-width: 50rem; color: var(--text-secondary); }
+
+.route-stop__facts { padding: 2rem; display: grid; align-content: start; gap: .9rem; }
+
+.route-stop__facts div { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding-block-start: .65rem; border-block-start: 1px solid var(--border-subtle); }
+
+.route-stop__facts dt { font-family: var(--font-functional); font-size: var(--fs-2xs); color: var(--text-muted); text-transform: uppercase; }
+
+.route-stop__facts dd { margin: 0; font-size: var(--fs-sm); }
+
+/* -----------------------------------------------------------------------
+     YACHT DETAIL — technical plate
+     ----------------------------------------------------------------------- */
+  .technical-hero { border-block-end: 1px solid var(--border-strong); }
+
+.technical-hero__grid { display: grid; grid-template-columns: 1.18fr .82fr; min-height: 47rem; border-inline: 1px solid var(--border-subtle); }
+
+.technical-hero__visual { position: relative; overflow: hidden; background: var(--brand-ink); }
+
+.technical-hero__visual img { width: 100%; height: 100%; object-fit: cover; filter: var(--media-filter); }
+
+.technical-hero__visual::after { content: ''; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px color-mix(in oklch, white 25%, transparent); pointer-events: none; }
+}

@@ -2,14 +2,17 @@
 
 Project mode: `prototype`
 
-| Asset | Source / owner | Licence / permission | Represents actual client reality? | Production status | Replacement required? |
-|---|---|---|---|---|---|
-| Current white logo | marbellaboatcharter.com / Marbella Boat Charter | Existing public brand asset; client authorization still required for transfer | yes | concept-only | yes, verify master asset |
-| Harbour aerial | Wyatt Simpson / Unsplash | Unsplash free licence | no (Monaco, not Puerto Banús) | concept-only | yes |
-| Motor yacht at sunset | Dawid Tkocz / Unsplash | Unsplash free licence | no | concept-only | yes |
-| Sailing yacht at sunset | amein shareef77 / Unsplash | Unsplash free licence | no | concept-only | yes |
-| Sailing yacht on blue water | Margo Evardson / Unsplash | Unsplash free licence | no | concept-only | yes |
+| Asset | Source / owner | Current use | Production status |
+|---|---|---|---|
+| `assets/logo-white.png` | public Marbella Boat Charter brand asset | retained in repository, not required by current chart-office UI | verify master/original with client |
+| Coast chart | original project SVG / data-led schematic | service-area explanation | usable after client confirms coverage wording |
+| Yacht technical silhouette | original project SVG schematic | non-photographic placeholder on Sunseeker 68 plate | replace/supplement with authorised actual vessel photography |
+| Fleet photography | none in v0.2 public UI | intentionally omitted | authorised real fleet imagery required before production |
+
+## Why stock yacht imagery was removed
+
+The previous build used representative Unsplash yacht imagery. It was licensed as stock but did not depict Marbella Boat Charter's actual vessels or ports and risked making the product feel generic. v0.2 removes those images rather than presenting unrelated boats as client inventory.
 
 ## Production asset gate
 
-The implementation is designed as production-oriented code, but the Archic machine contract remains in `prototype` mode because current photographic rights and actual fleet imagery have not been supplied/verified by the client. Before launch: replace representative imagery with authorized real fleet/crew/location assets, set `mode: production`, change policy to `real-or-authorized`, mark `verified: true`, and rerun every gate.
+Before launch, acquire/export the operator's original brand marks and authorised high-resolution fleet, crew and marina photography. Document owner/permission, responsive crops and which exact vessel each asset represents; then change the project asset policy and rerun QA.

@@ -1,32 +1,30 @@
 # Archic Quality Gate — Marbella Boat Charter × Archic
-Date: 2026-08-12 · Reviewer: initial machine pass · Build: 0.1
+Date: 2026-08-12 · Reviewer: machine + source pass · Build: 0.2
 
 ## Passed in this milestone
 
-- Foundation/semantic contract exact-copy verification: PASS.
-- Project contract + Direction Vector validation: PASS.
-- Semantic contract mapping: 79/79 roles: PASS.
+- Foundation + semantic layer retained; client Brand Layer rewritten: PASS.
+- Semantic contract mapping: **79/79 roles**: PASS.
 - WCAG + APCA contrast matrix: PASS; sRGB gamut clean.
 - Static anti-template audit: PASS.
-- No native date input; planner uses project-designed calendar.
-- No Lorem ipsum, no TODO markers, no card-grid fleet architecture.
-- Keyboard-visible focus and minimum touch sizing implemented at component level.
-- 404, sitemap, robots and Vercel security headers included.
+- No inline-style/template findings in public HTML.
+- No public Unsplash/representative yacht photography.
+- No public use of the old Archic page grammar (`editorial-split`, CTA band, drawer planner, generic hero/media pattern).
+- Fleet dataset expanded to 30 published/known vessels across motor, sailing, fishing and group operations.
+- Charter enquiry hands off a structured brief to the published WhatsApp number; it does not claim live booking.
+- Internal page links checked: no missing local targets.
 
 ## Findings blocking production
 
-| # | Severity | Location | Issue | Resolution |
+| # | Severity | Area | Issue | Resolution |
 |---|---|---|---|---|
-| 1 | Blocker | Imagery | Representative Unsplash images do not document the actual client fleet/location. | Replace with authorized real fleet, crew and Puerto Banús assets; verify crops at all breakpoints. |
-| 2 | Blocker | Booking | Planner success state is local only; it does not transmit data. | Confirm booking/CRM target, implement API endpoint, validation, anti-spam and delivery confirmation. |
-| 3 | Blocker | Content | Public source pages contain inconsistent statements around VAT and what is included across vessels. | Reconcile every current price/inclusion with client-owned source of truth. |
-| 4 | Major | Internationalisation | English architecture is complete; Spanish production copy is not yet implemented. | Native Spanish copy pass and full route parity. |
-| 5 | Major | Device QA | Container browser could not complete a visual network-loaded screenshot pass. | Run 320/375/768/1024/1440/2560 plus iPhone and mid-range Android on deployed preview. |
-| 6 | Major | Performance | Representative images are remote and not yet art-directed into local responsive sizes. | Export authorized AVIF/WebP/JPEG sources, width descriptors and mobile crops. |
-| 7 | Major | Legal | Existing client privacy/cookies/terms are not migrated into this build. | Client/legal review and route migration before launch. |
+| 1 | Blocker | Assets | Original/high-resolution client fleet photography and master brand assets are not authorised/verified. | Acquire, document and art-direct real client assets. |
+| 2 | Blocker | Commercial data | Rates, fleet status, VAT, fuel, moorings and inclusions are based on public source pages and may change. | Reconcile against client-owned source of truth. |
+| 3 | Major | Internationalisation | English build only. | Native Spanish copy and complete route parity. |
+| 4 | Major | Legal | Privacy/cookies/booking terms are not migrated/reviewed. | Client/legal pass before launch. |
+| 5 | Major | Device QA | Headless Chromium in this container could not complete screenshot capture reliably. | Run deployed visual QA at mobile/tablet/desktop breakpoints and real devices. |
+| 6 | Optional | Booking | Current handoff is WhatsApp, not a live inventory/CRM system. | Connect Archic Control or existing booking workflow if required by client. |
 
 ## Verdict
 
-**FIX AND RE-RUN before production.**
-
-This does not block using the build as the production-oriented foundation for continued development; it blocks claiming the current package is launch-ready.
+**Suitable as the v0.2 sales/development foundation; not yet production-approved.**

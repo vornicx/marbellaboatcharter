@@ -1,127 +1,103 @@
 # Brand Brief — Marbella Boat Charter × Archic
 
-Date: 2026-08-12 · Author: Archic · Version: 0.1
+Date: 2026-08-12 · Version: 0.2
 
-## 1 · The business
+## Business truth
 
-**What they do, precisely.** Private motor-yacht, sailing, fishing and group-boat charters departing primarily from Puerto Banús, with short 2–4 hour trips, full-day charters and selected multi-day routes. The offer also covers dolphin watching, Gibraltar/Morocco routes, celebrations and corporate groups.
+Marbella Boat Charter is based in Puerto Banús but the business is not confined to Puerto Banús. Its published offer covers the Costa del Sol with service/departure logic around Marbella, Puerto Banús, Estepona, Sotogrande and Benalmádena, plus longer programmes toward Gibraltar and selected Morocco routes.
 
-**Where they sit in the market, honestly.** A long-running local charter operator with unusually broad inventory and a practical concierge role. The current digital expression undersells that depth by presenting the offer as disconnected SEO/service pages.
+The product is also broader than “luxury yacht rental”. The published inventory spans motor yachts, sailing, dedicated fishing boats and group vessels. The company additionally promotes corporate/group programmes, catering and yacht management / maintenance.
 
-**What competitors genuinely struggle to match.** Public evidence suggests breadth: many vessel sizes and price points, multiple charter formats, and local coordination from a Puerto Banús base. This is an inferred differentiator and requires client validation before production sign-off.
+## Product problem
 
-| Fact | Detail | Usable as |
-|---|---|---|
-| Base | Edificio de Levante 10-B, Puerto Banús | trust / contact / local knowledge |
-| Fleet | motor yachts from day boats to 90ft-class yachts | product / comparison |
-| Format | 2h, 3h, 4h, 6h, 8h and selected week charters | product / planner |
-| Crew | professional skipper; larger yachts add crew/deckhand | trust / inclusions |
-| Activities | sailing, fishing, dolphins, groups, Gibraltar, Morocco | intent-led discovery |
+The old website contains real breadth but distributes it across a large number of SEO-led pages. The first Archic build corrected some information hierarchy but made a different mistake: it narrowed the brand too strongly to Puerto Banús and reused a recognisable Archic grammar — full-bleed hero, editorial split, repeated rows, dark interruption panel, CTA band and drawer planner.
 
-## 2 · Personality
+That is explicitly rejected in v0.2. The Design System is a foundation and validation contract, not a visual template library.
 
-| Is | Is not |
-|---|---|
-| Assured | flashy |
-| Coastal | tropical |
-| Precise | corporate |
-| Experienced | old-fashioned |
-| Helpful | over-familiar |
+## Perception target
 
-**Perception target:** “They know the boats, the coast and the practical details; I can choose confidently without sorting through twenty confusing pages.”
+“They know this coast, they understand the operational differences between boats, and they can organise more than a simple four-hour yacht rental.”
 
-**Three-sentence description:** Marbella Boat Charter is a Puerto Banús charter operator with a broad working fleet and multiple ways to spend time on the Costa del Sol by sea. The service is practical before it is performative: choose the right boat, understand what is included, and speak to a team that can shape the route around the group. The website should make that breadth feel controlled rather than crowded.
+The brand should feel:
 
-## 3 · Competitive context
+- coastal, not resort-themed;
+- precise, not corporate;
+- experienced, not old-fashioned;
+- operational, not marketplace-like;
+- premium through judgement and detail, not through black/gold luxury costume.
 
-| Competitor | What they do well | What we will not copy |
-|---|---|---|
-| Spain Yacht Rentals | clear fleet/pricing narrative | generic stacked yacht cards and decorative luxury language |
-| Freddie Boats Marbella | energetic local imagery | tourism-marketplace visual density |
-| Marbella Charter | strong social proof | review-first template structure |
-| Maia Fair | focused single-yacht storytelling | single-object cinematic logic applied to a large fleet |
-| SamBoat | powerful filtering | marketplace chrome that makes the operator feel interchangeable |
+## Audiences
 
-**Category cliché:** dark full-bleed yacht photograph, widely tracked uppercase labels, gold accents, serif display type and a repeated card grid.
+1. Couples, families and small groups comparing a private day on the water.
+2. Affluent visitors who know they want a larger motor yacht and need confidence on route/inclusions.
+3. Fishing customers who care about the programme and equipment, not decorative luxury language.
+4. Corporate/event organisers who may need large single-vessel capacity or coordinated multi-boat activity.
+5. Yacht owners enquiring about management, maintenance or charter commercialisation.
 
-## 4 · Audience
+## Conversion
 
-- **Who:** international visitors staying in Marbella/Puerto Banús; couples/families; groups and celebrations; corporate organisers; repeat affluent visitors who value speed and clarity.
-- **Device split:** analytics not supplied. Mobile is treated as a primary planning context, not because a percentage is assumed but because booking often happens while travelling.
-- **State of mind:** mostly comparing, with a meaningful ready-to-enquire segment.
-- **Need to decide:** group size, boat type, duration, indicative price, inclusions, departure point, weather/cancellation confidence.
-- **Main objection:** uncertainty — whether the displayed boat is suitable/available and what the actual final cost includes.
-- **Accessibility:** high outdoor/mobile use; strong contrast and large touch targets matter in bright light.
+Primary: qualified availability enquiry via WhatsApp / direct contact.
 
-## 5 · Objective
+A qualified enquiry should carry date, guest count, area/departure, duration and intended plan or vessel. The interface does not pretend to provide live booking when no inventory API is connected.
 
-- **Primary conversion goal:** qualified charter availability enquiry.
-- **Measured by:** completed planner submissions / started planner sessions.
-- **Secondary goals:** 1) fleet-detail visits, 2) WhatsApp contact, 3) experience exploration, 4) phone calls.
-
-| Image | Product | Information | Story |
-|---|---|---|---|
-| 25% | 35% | 30% | 10% |
-
-## 6 · Direction Vector
+## Direction vector
 
 | Axis | Value | Rationale |
 |---|---:|---|
-| Density | 4 | a large comparable inventory must remain visible |
-| Volume | 2 | quiet confidence; the sea and product carry the page |
-| Geometry | 4 | marine specifications benefit from orthogonal structure |
-| Temperature | 2 | cool Mediterranean water/steel/white hulls, not resort beige |
-| Era | 4 | contemporary service and modern charter planning |
-| Kinetics | 2 | movement supports orientation, never competes with browsing |
-| Distance | 3 | professional enough for high-value purchases, human enough for holidays |
+| Density | 5 | real inventory and operational detail are a strength |
+| Volume | 3 | strong hierarchy without theatrical luxury scale |
+| Geometry | 5 | charts, registers and technical records are native to the subject |
+| Temperature | 2 | cool water/ink/chart-paper world |
+| Era | 3 | contemporary but not trendy SaaS |
+| Kinetics | 1 | the information should feel stable and navigable |
+| Distance | 4 | high-value, practical, professional relationship |
 
-**Lead medium:** Data
+Lead medium: **Data / type**.
 
-**Divergence:** no shipped projects are registered in Archic DS v1.0 at decision date; machine gate therefore reports no comparison applicable.
+## Composition system
 
-## 7 · Composition archetype
+Primary archetype: **Dossier**. Secondary: **Editorial Spread** only when geography or narrative requires it.
 
-**Primary:** Index  
-**Secondary:** Editorial Spread (home/experiences) with Dossier logic inside yacht detail and planner.
+The client-facing grammar is named **Coastal Navigation Office**:
 
-The fleet is the product and comparison is the job, so the list itself becomes the main visual structure. Photography is revealed selectively instead of repeated as same-sized cards. Editorial compositions appear only where route, coast or experience needs emotion. Individual yacht pages turn factual: dimensions, capacity, rates, inclusions and constraints are set as a marine dossier.
+1. **Coast chart** — geography is a primary interface, showing base, service ports and destinations.
+2. **Course board** — routes read like operating options, not experience cards.
+3. **Fleet register** — all published boats are grouped by operation and read as a working register.
+4. **Fleet scale** — physical boat length becomes a visual variable.
+5. **Technical yacht plate** — specifications, seasonal rates and vessel-specific inclusions are treated as one technical record.
+6. **Charter desk** — an inline dispatch form prepares a real enquiry; no generic drawer or fake instant booking.
+7. **Service ledger** — catering and yacht management sit alongside charter as real business lines.
 
-## 8 · Typography
+### Explicit anti-repeat rule
 
-- **Display:** Newsreader / Georgia fallback, 500–600 only; editorial use, never hairline.
-- **Body & functional:** Inter / Arial fallback, tabular numerals for prices.
-- **Pairing:** contrast pair.
-- **Scale:** restrained body ratio with larger but compact display steps; density 4 means less theatrical scale.
-- **Languages:** EN first in this build; ES content architecture prepared but requires native copy pass before production.
+Do not reuse recognisable page-level components from Mfinity, La Bocana, Noguera or other Archic projects simply because they already exist. Foundation tokens, accessibility rules and QA tooling are reusable. Client-facing compositions are not reusable by default.
 
-## 9 · Colour
+Specifically banned for this project unless a future requirement independently justifies them:
 
-**Strategy:** material / cool harbour palette. Off-white gelcoat ground, navy-water figure, oxidised teal signal, steel-neutral dividers. No gold.
+- full-bleed photographic hero with text overlay;
+- generic split-image/text section;
+- repeated luxury cards;
+- CTA band copied between pages;
+- drawer-based multi-step planner;
+- black/gold/serif “luxury” costume;
+- fixed generic “featured item” slot in navigation;
+- decorative pill filters.
 
-## 10 · Motion
+## Typography & colour
 
-**Intensity:** Subtle.  
-**Page transitions:** none.  
-**Signature:** index media cross-fade and a planner drawer that moves from the physical right edge.  
-**Reduced motion:** Foundation collapse to 1ms.
+Display/body: Manrope. Functional/data: IBM Plex Mono.
 
-## 11 · Geometry
+Chart-paper off-white, marine ink, sea teal and a restrained signal orange. No gold, no decorative serif, no glass effects, no soft floating cards.
 
-Zero-radius editorial planes and controls with 2px optical softening only where interaction needs it. Hairline rules instead of shadows. No floating glass cards.
+## Asset policy
 
-## 12 · Voice
+The project must not present unrelated stock-yacht photography as if it were a specific Marbella Boat Charter vessel. Until original/high-resolution client imagery is authorised, technical drawings, chart graphics and data-led composition are preferable to deceptive photography. Production remains gated on verified visual assets.
 
-- **Register:** informed, concise, specific.
-- **Sample headline:** “Choose the boat by the day you actually want.”
-- **Error:** “Choose a date so we can check availability.”
-- **Confirmation:** “Your charter request is ready for the team.”
-- **Uses:** duration, capacity, route, included, departure, crew, availability.
-- **Never uses:** elevate, seamless, unrivalled, redefining, timeless elegance, bespoke.
+## Content rules
 
-## 13 · Signature elements
-
-1. Fleet as a live typographic manifest with persistent media preview.
-2. Charter planner begins with intent and people, not a blank contact form.
-3. A “sea state” visual grammar: depth marks, coordinate-like numbering and measured rules, without nautical-theme decoration.
-
-**Interaction signature:** moving through the fleet changes one fixed visual field while the information stays stable and readable.
+- Puerto Banús = base / office, not the whole service area.
+- Marbella / Estepona / Sotogrande / Benalmádena = service/departure context where supported by the operator.
+- Gibraltar and Morocco = routes/destinations, not business locations.
+- Inclusions must be vessel-specific where published information differs.
+- Prices are orientation until live availability, VAT, fuel, mooring and seasonal conditions are confirmed.
+- Wildlife such as dolphins is never guaranteed.

@@ -1,0 +1,83 @@
+@layer archic.site {
+@media (max-width: 54rem) {
+    body::before { background-size: 5rem 5rem; }
+    .chart-header__top { min-height: 4.1rem; }
+    .wordmark { border-inline-end: 0; }
+    .availability-link { min-width: 8.5rem; }
+    .chart-nav { display: none; }
+    .chart-menu {
+      display: flex;
+      min-height: 3rem;
+      border-inline: 1px solid var(--border-subtle);
+    }
+    .chart-menu button {
+      flex: 1;
+      border: 0;
+      border-inline-end: 1px solid var(--border-subtle);
+      background: transparent;
+      font-family: var(--font-functional);
+      font-size: var(--fs-xs);
+      text-transform: uppercase;
+      text-align: left;
+      padding-inline: 1rem;
+    }
+    .chart-menu a { min-width: 9rem; display: grid; place-items: center; background: var(--brand-ink); color: var(--brand-white); text-decoration: none; font-family: var(--font-functional); font-size: var(--fs-xs); }
+    .chart-nav[data-open="true"] { display: grid; position: absolute; z-index: var(--z-overlay); left: var(--gutter); right: var(--gutter); background: var(--brand-paper); border: 1px solid var(--border-strong); }
+    .chart-nav[data-open="true"] a { border-inline-end: 0; border-block-end: 1px solid var(--border-subtle); }
+
+    .chart-hero__intro { padding: 2.5rem 1.25rem; min-height: 31rem; }
+    .hero-summary__line { grid-template-columns: 6.4rem 1fr; }
+    .coast-chart { min-height: 36rem; }
+    .coast-chart__label { font-size: .61rem; }
+    .chart-key { right: 1.25rem; gap: .55rem 1rem; }
+
+    .course-board__head { display: none; }
+    .course-row { grid-template-columns: 4rem 1fr 5rem; min-height: 8rem; }
+    .course-row > * { padding-inline: .75rem; }
+    .course-row > *:nth-child(3), .course-row > *:nth-child(4) { display: none; }
+    .course-row > *:nth-child(2) { border-inline-end: 1px solid var(--border-subtle); }
+    .course-name { font-size: var(--fs-lg); }
+
+    .vessel-bar { grid-template-columns: 1fr 5rem; min-height: 5.4rem; }
+    .vessel-bar__track, .vessel-bar__pax { display: none; }
+    .vessel-bar__price { padding-inline: .5rem; }
+    .operation-field { grid-template-columns: 4rem 1fr 4rem; min-height: 8rem; }
+    .operation-field__detail { display: none; }
+    .operation-field > * { padding: 1rem .75rem; }
+    .operation-field__name { font-size: var(--fs-xl); }
+    .big-number { font-size: 9rem; }
+    .service-ledger__row { grid-template-columns: 2rem 1fr; gap: 1rem; }
+    .service-ledger__row p, .service-ledger__row a { grid-column: 2; }
+
+    .dispatch-line { grid-template-columns: 7rem 1fr; }
+    .dispatch-options { grid-template-columns: 1fr; }
+    .dispatch-option label { border-inline-end: 0; border-block-end: 1px solid var(--border-subtle); }
+    .dispatch-option:last-child label { border-block-end: 0; }
+    .chart-footer__grid { grid-template-columns: 1fr; }
+    .chart-footer__grid > *:not(:last-child) { border-inline-end: 0; border-block-end: 1px solid color-mix(in oklch, var(--brand-white) 15%, transparent); }
+
+    .fleet-table-head { display: none; }
+    .fleet-entry { grid-template-columns: 3rem 1fr auto; grid-template-areas: 'idx name price' 'idx route price'; min-height: 6.5rem; }
+    .fleet-entry > * { padding-inline: .65rem; }
+    .fleet-entry__index { grid-area: idx; border-inline-end: 1px solid var(--border-subtle); }
+    .fleet-entry__name { grid-area: name; border-inline-end: 0 !important; align-items: end; padding-block-end: .15rem; }
+    .fleet-entry__route { grid-area: route; border-inline-end: 0 !important; align-items: start; padding-block-start: .15rem; font-size: var(--fs-xs); }
+    .fleet-entry__pax, .fleet-entry__length { display: none; }
+    .fleet-entry__price { grid-area: price; border-inline-start: 1px solid var(--border-subtle); }
+    .fleet-group__head { grid-template-columns: 4rem 1fr auto; }
+
+    .route-atlas__axis { left: calc(var(--gutter) + 2.5rem); }
+    .route-stop { grid-template-columns: 5rem 1fr; min-height: auto; }
+    .route-stop__code::after { right: calc(2.5rem - 4px); }
+    .route-stop__main { padding: 2rem 1.25rem; }
+    .route-stop__facts { padding: 1.25rem; }
+    .technical-hero__visual { min-height: 55svh; }
+    .technical-hero__plate { padding: 2rem 1.25rem; }
+    .technical-specs, .inclusion-grid { grid-template-columns: 1fr; }
+    .technical-specs div:nth-child(odd) { border-inline-end: 0; padding-inline-end: 0; }
+    .technical-specs div:nth-child(even) { padding-inline-start: 0; }
+    .inclusion-grid > div:first-child { border-inline-end: 0; border-block-end: 1px solid var(--border-strong); }
+    .rate-row { grid-template-columns: 1.2fr 1fr 1fr; }
+    .rate-row > *:nth-child(4) { display: none; }
+  }
+}

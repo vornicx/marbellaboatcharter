@@ -1,0 +1,203 @@
+@layer archic.site {
+.coast-chart::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, var(--brand-line-soft) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--brand-line-soft) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    opacity: .78;
+  }
+
+.coast-chart__label {
+    position: absolute;
+    z-index: var(--z-raised);
+    top: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: var(--font-functional);
+    font-size: var(--fs-2xs);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--text-muted);
+  }
+
+.coast-chart svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.coastline { fill: none; stroke: var(--brand-ink); stroke-width: 1.5; vector-effect: non-scaling-stroke; opacity: .76; }
+
+.route-line { fill: none; stroke: var(--brand-sea); stroke-width: 3; vector-effect: non-scaling-stroke; stroke-dasharray: 5 8; }
+
+.route-line--far { stroke: var(--brand-signal); stroke-dasharray: 2 10; }
+
+.bearing { stroke: var(--brand-line); stroke-width: 1; stroke-dasharray: 2 5; vector-effect: non-scaling-stroke; }
+
+.port-dot { fill: var(--brand-paper); stroke: var(--brand-ink); stroke-width: 2; vector-effect: non-scaling-stroke; }
+
+.port-dot--base { fill: var(--brand-signal); stroke: var(--brand-ink); }
+
+.port-dot--destination { fill: var(--brand-sea); stroke: var(--brand-ink); }
+
+.port-label { font: 500 12px 'IBM Plex Mono', monospace; fill: var(--brand-ink); letter-spacing: .04em; }
+
+.port-sub { font: 400 10px 'IBM Plex Mono', monospace; fill: var(--text-muted); }
+
+.chart-key {
+    position: absolute;
+    z-index: var(--z-raised);
+    left: 1.25rem;
+    bottom: 1.25rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: .8rem 1rem;
+    background: color-mix(in oklch, var(--brand-paper) 92%, transparent);
+    border: 1px solid var(--border-strong);
+    font-family: var(--font-functional);
+    font-size: var(--fs-2xs);
+  }
+
+.chart-key span { display: inline-flex; align-items: center; gap: .4rem; }
+
+.chart-key i { width: .55rem; height: .55rem; border: 1px solid var(--brand-ink); display: inline-block; }
+
+.chart-key .base { background: var(--brand-signal); }
+
+.chart-key .service { background: var(--brand-paper); }
+
+.chart-key .destination { background: var(--brand-sea); }
+
+/* -----------------------------------------------------------------------
+     COURSE BOARD — timetabled itineraries, not cards
+     ----------------------------------------------------------------------- */
+  .course-board { border-block: 1px solid var(--border-strong); }
+
+.course-board__head {
+    display: grid;
+    grid-template-columns: 8rem 1.25fr 1fr 1fr 7rem;
+    min-height: 3rem;
+    align-items: center;
+    border-inline: 1px solid var(--border-subtle);
+    font-family: var(--font-functional);
+    font-size: var(--fs-2xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+
+.course-board__head span, .course-row > * { padding-inline: 1rem; }
+
+.course-board__head span:not(:last-child), .course-row > *:not(:last-child) { border-inline-end: 1px solid var(--border-subtle); }
+
+.course-row {
+    display: grid;
+    grid-template-columns: 8rem 1.25fr 1fr 1fr 7rem;
+    min-height: 7.25rem;
+    align-items: stretch;
+    border-inline: 1px solid var(--border-subtle);
+    border-block-start: 1px solid var(--border-subtle);
+    text-decoration: none;
+    transition: background var(--motion-feedback) var(--motion-ease);
+  }
+
+.course-row:hover { background: var(--brand-ink); color: var(--brand-white); }
+
+.course-row:hover .course-muted, .course-row:hover .kicker { color: color-mix(in oklch, var(--brand-white) 70%, transparent); }
+
+.course-row > * { display: flex; align-items: center; }
+
+.course-code { font-family: var(--font-functional); font-size: var(--fs-xs); color: var(--brand-signal-dark); }
+
+.course-name { font-size: var(--fs-xl); font-weight: 600; letter-spacing: -.035em; }
+
+.course-muted { font-size: var(--fs-sm); color: var(--text-secondary); }
+
+.course-time { justify-content: flex-end; font-family: var(--font-functional); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+
+.course-arrow { justify-content: center; font-size: 1.35rem; }
+
+/* -----------------------------------------------------------------------
+     FLEET SCALE — visual length register
+     ----------------------------------------------------------------------- */
+  .scale-wrap { border-block-end: 1px solid var(--border-strong); }
+
+.scale-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, .46fr);
+    gap: 4rem;
+    align-items: end;
+    margin-block-end: 3rem;
+  }
+
+.scale-head .display { max-width: 12ch; }
+
+.vessel-scale { border-block-start: 1px solid var(--border-strong); }
+
+.vessel-bar {
+    min-height: 5.2rem;
+    display: grid;
+    grid-template-columns: minmax(11rem, .88fr) minmax(13rem, 1.5fr) 5rem 7rem;
+    align-items: center;
+    border-block-end: 1px solid var(--border-subtle);
+    text-decoration: none;
+  }
+
+.vessel-bar > * { padding-inline: 1rem; }
+
+.vessel-bar__name { font-weight: 600; letter-spacing: -.025em; }
+
+.vessel-bar__track { position: relative; height: 1.2rem; border-inline-start: 1px solid var(--border-strong); }
+
+.vessel-bar__track::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: var(--vessel-scale, 40%);
+    height: 2px;
+    transform: translateY(-50%);
+    background: var(--brand-sea);
+    transition: height var(--motion-feedback) var(--motion-ease), background var(--motion-feedback) var(--motion-ease);
+  }
+
+.vessel-bar__track::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: var(--vessel-scale, 40%);
+    width: 7px;
+    height: 7px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: var(--brand-signal);
+  }
+
+.vessel-bar__pax, .vessel-bar__price { font-family: var(--font-functional); font-size: var(--fs-xs); text-align: right; font-variant-numeric: tabular-nums; }
+
+.vessel-bar:hover { background: var(--surface-hover); }
+
+.vessel-bar:hover .vessel-bar__track::before { height: 5px; background: var(--brand-ink); }
+
+/* -----------------------------------------------------------------------
+     OPERATIONS — four fields sharing one rule, no card chrome
+     ----------------------------------------------------------------------- */
+  .operations { background: var(--brand-ink); color: var(--brand-white); }
+
+.operations .kicker { color: color-mix(in oklch, var(--brand-white) 58%, transparent); }
+
+.operations__title { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; padding-block-end: 3rem; }
+
+.operations__title p { color: color-mix(in oklch, var(--brand-white) 74%, transparent); }
+
+.operation-field {
+    display: grid;
+    grid-template-columns: 8rem 1.2fr 1fr 7rem;
+    align-items: stretch;
+    min-height: 9rem;
+    border-block-start: 1px solid color-mix(in oklch, var(--brand-white) 20%, transparent);
+    text-decoration: none;
+  }
+}
