@@ -1,1 +1,180 @@
-/* ==========================================================================\n   ARCHIC SEMANTIC CONTRACT\n   --------------------------------------------------------------------------\n   The interface between brand and components.\n\n   COMPONENTS READ THESE TOKENS AND NOTHING ELSE.\n   A component that references --space-8 or --brand-ink directly is broken:\n   it cannot be re-themed, which defeats the purpose of the system.\n\n   Every brand.css MUST define every token in this file. The values here are\n   deliberately obvious placeholders (magenta) so an unfilled contract is\n   impossible to miss in review rather than quietly shipping as grey.\n\n   Load order:\n     foundation.css → semantic-contract.css → brand.css → archetype.css\n   ========================================================================== */\n\n@layer archic.semantic {\n  :root {\n    --bg-primary:      magenta;\n    --bg-secondary:    magenta;\n    --bg-inverse:      magenta;\n    --surface:         magenta;\n    --surface-hover:   magenta;\n    --surface-sunken:  magenta;\n    --surface-overlay: magenta;\n    --scrim:           magenta;\n\n    --text-primary:    magenta;\n    --text-secondary:  magenta;\n    --text-muted:      magenta;\n    --text-inverse:    magenta;\n    --text-on-media:   magenta;\n    --text-accent:     magenta;\n    --text-link:       magenta;\n    --text-link-hover: magenta;\n\n    --border-subtle:      magenta;\n    --border-strong:      magenta;\n    --border-interactive: magenta;\n    --border-focus:       magenta;\n\n    --interactive:            magenta;\n    --interactive-hover:      magenta;\n    --interactive-active:     magenta;\n    --interactive-disabled:   magenta;\n    --on-interactive:         magenta;\n    --on-interactive-disabled:magenta;\n    --interactive-secondary:        magenta;\n    --interactive-secondary-hover:  magenta;\n    --on-interactive-secondary:     magenta;\n\n    --focus:             magenta;\n    --focus-ring-width:  var(--focus-width);\n    --focus-ring-offset: var(--focus-offset);\n\n    --status-error:     magenta;\n    --status-error-bg:  magenta;\n    --status-success:   magenta;\n    --status-success-bg:magenta;\n    --status-warning:   magenta;\n    --status-warning-bg:magenta;\n    --status-info:      magenta;\n    --status-info-bg:   magenta;\n\n    --font-display:    'REPLACE-ME', serif;\n    --font-body:       'REPLACE-ME', sans-serif;\n    --font-functional: 'REPLACE-ME', sans-serif;\n    --weight-display:    400;\n    --weight-body:       400;\n    --weight-emphasis:   500;\n    --weight-strong:     600;\n\n    --radius-control:   var(--radius-sm);\n    --radius-container: var(--radius-md);\n    --radius-media:     var(--radius-md);\n    --radius-pill:      var(--radius-full);\n    --border-width-control:   var(--border-thin);\n    --border-width-container: var(--border-thin);\n    --border-width-divider:   var(--border-thin);\n\n    --elevation-raised:  none;\n    --elevation-overlay: none;\n    --elevation-dialog:  none;\n\n    --control-height-sm: 36px;\n    --control-height-md: 44px;\n    --control-height-lg: 52px;\n    --control-pad-x:     var(--space-5);\n    --control-pad-y:     var(--space-3);\n    --control-gap:       var(--space-2);\n    --control-font-size: var(--fs-md);\n    --safe-area-gutter:  var(--space-4);\n\n    --motion-feedback:   var(--dur-fast);\n    --motion-press:      var(--dur-instant);\n    --motion-local:      var(--dur-base);\n    --motion-container:  var(--dur-md);\n    --motion-page:       var(--dur-slow);\n    --motion-ease:       var(--ease-out-quart);\n    --motion-ease-exit:  var(--ease-in-quad);\n    --motion-stagger:    var(--stagger-base);\n\n    --media-filter:        none;\n    --media-filter-hover:  none;\n    --media-scrim:         linear-gradient(to top, magenta, transparent);\n    --media-ratio-hero:    var(--ratio-wide);\n    --media-ratio-card:    var(--ratio-portrait);\n    --media-ratio-mobile:  var(--ratio-portrait);\n  }\n}\n\n/* ==========================================================================\n   CONTRACT CHECK\n   Paste into the browser console on any page to find unfilled tokens.\n   Ship-blocking: the result must be an empty array.\n\n   [...document.styleSheets].flatMap(s => { try { return [...s.cssRules] }\n     catch { return [] } })\n     .flatMap(r => r.style ? [...r.style] : [])\n     .filter(p => p.startsWith('--'))\n     .filter(p => getComputedStyle(document.documentElement)\n       .getPropertyValue(p).match(/magenta|REPLACE-ME/i))\n   ========================================================================== */\n
+/* ==========================================================================
+   ARCHIC SEMANTIC CONTRACT
+   --------------------------------------------------------------------------
+   The interface between brand and components.
+
+   COMPONENTS READ THESE TOKENS AND NOTHING ELSE.
+   A component that references --space-8 or --brand-ink directly is broken:
+   it cannot be re-themed, which defeats the purpose of the system.
+
+   Every brand.css MUST define every token in this file. The values here are
+   deliberately obvious placeholders (magenta) so an unfilled contract is
+   impossible to miss in review rather than quietly shipping as grey.
+
+   Load order:
+     foundation.css → semantic-contract.css → brand.css → archetype.css
+   ========================================================================== */
+
+@layer archic.semantic {
+  :root {
+    /* === SURFACES =======================================================
+       Ground: what the page sits on.
+       Surface: material placed on the ground (panels, sheets, inputs).
+       Inverse: the opposite ground, for deliberate contrast sections.
+       ==================================================================== */
+    --bg-primary:      magenta;  /* the page                              */
+    --bg-secondary:    magenta;  /* alternate section band                */
+    --bg-inverse:      magenta;  /* contrast section / footer             */
+    --surface:         magenta;  /* raised or contained material          */
+    --surface-hover:   magenta;
+    --surface-sunken:  magenta;  /* wells, inputs, code, table headers    */
+    --surface-overlay: magenta;  /* dialogs, popovers, menus              */
+    --scrim:           magenta;  /* over media, for text legibility       */
+
+    /* === TEXT ===========================================================
+       Contrast requirements are INVARIANT (see 03-invariants-and-variables):
+         --text-primary   ≥ 7:1   on --bg-primary
+         --text-secondary ≥ 4.5:1 on --bg-primary
+         --text-muted     ≥ 4.5:1 on --bg-primary  (there is no 3:1 grey)
+       ==================================================================== */
+    --text-primary:    magenta;
+    --text-secondary:  magenta;
+    --text-muted:      magenta;
+    --text-inverse:    magenta;  /* on --bg-inverse                       */
+    --text-on-media:   magenta;  /* over scrimmed imagery                 */
+    --text-accent:     magenta;
+    --text-link:       magenta;
+    --text-link-hover: magenta;
+
+    /* === BORDERS ========================================================
+       --border-subtle: structure the eye should not notice
+       --border-strong: structure the eye should notice
+       --border-interactive: ≥3:1 against adjacent surfaces (invariant)
+       ==================================================================== */
+    --border-subtle:      magenta;
+    --border-strong:      magenta;
+    --border-interactive: magenta;
+    --border-focus:       magenta;
+
+    /* === INTERACTIVE ====================================================
+       The primary action colour and its states. NOT necessarily the brand
+       colour — the brand colour is often too loud or too pale to be the
+       action colour. This is a functional decision.
+       ==================================================================== */
+    --interactive:            magenta;
+    --interactive-hover:      magenta;
+    --interactive-active:     magenta;
+    --interactive-disabled:   magenta;
+    --on-interactive:         magenta;  /* text/icon ON the above, ≥4.5:1  */
+    --on-interactive-disabled:magenta;
+
+    --interactive-secondary:        magenta;
+    --interactive-secondary-hover:  magenta;
+    --on-interactive-secondary:     magenta;
+
+    /* === FOCUS ==========================================================
+       Existence and size are Foundation invariants. Only colour is brand.
+       Must reach ≥3:1 against BOTH the element and its surroundings.
+       ==================================================================== */
+    --focus:             magenta;
+    --focus-ring-width:  var(--focus-width);
+    --focus-ring-offset: var(--focus-offset);
+
+    /* === STATUS =========================================================
+       Hue is brand-tunable, meaning is not. Never the sole signal —
+       always paired with an icon or text.
+       ==================================================================== */
+    --status-error:     magenta;
+    --status-error-bg:  magenta;
+    --status-success:   magenta;
+    --status-success-bg:magenta;
+    --status-warning:   magenta;
+    --status-warning-bg:magenta;
+    --status-info:      magenta;
+    --status-info-bg:   magenta;
+
+    /* === TYPOGRAPHY ROLES ===============================================
+       Three roles maximum. A fourth family is almost always a mistake.
+       --font-functional may equal --font-body; it exists so data, labels
+       and UI can diverge (e.g. tabular mono) without touching prose.
+       ==================================================================== */
+    --font-display:    'REPLACE-ME', serif;
+    --font-body:       'REPLACE-ME', sans-serif;
+    --font-functional: 'REPLACE-ME', sans-serif;
+
+    --weight-display:    400;
+    --weight-body:       400;
+    --weight-emphasis:   500;
+    --weight-strong:     600;
+
+    /* === SHAPE ==========================================================
+       Mapped from foundation --radius-* by brand. May all be 0.
+       ==================================================================== */
+    --radius-control:   var(--radius-sm);   /* buttons, inputs   */
+    --radius-container: var(--radius-md);   /* panels, dialogs   */
+    --radius-media:     var(--radius-md);   /* images, video     */
+    --radius-pill:      var(--radius-full); /* only if earned    */
+
+    --border-width-control:   var(--border-thin);
+    --border-width-container: var(--border-thin);
+    --border-width-divider:   var(--border-thin);
+
+    /* === ELEVATION ======================================================
+       Default position: no shadows. Tone shift and space are the preferred
+       elevation devices. Define these only if the brand genuinely uses them.
+       ==================================================================== */
+    --elevation-raised:  none;
+    --elevation-overlay: none;
+    --elevation-dialog:  none;
+
+    /* === CONTROL SIZING =================================================
+       Height must never drop below --target-min on touch (invariant).
+       ==================================================================== */
+    --control-height-sm: 36px;
+    --control-height-md: 44px;
+    --control-height-lg: 52px;
+    --control-pad-x:     var(--space-5);
+    --control-pad-y:     var(--space-3);
+    --control-gap:       var(--space-2);
+    --control-font-size: var(--fs-md);
+    --safe-area-gutter:  var(--space-4);
+
+    /* === MOTION ROLES ===================================================
+       Brand maps foundation duration bands to interaction roles. This is
+       where Subtle / Editorial / Cinematic character is actually expressed.
+       ==================================================================== */
+    --motion-feedback:   var(--dur-fast);    /* hover */
+    --motion-press:      var(--dur-instant); /* contact / active feedback */
+    --motion-local:      var(--dur-base);    /* tooltip, inline change      */
+    --motion-container:  var(--dur-md);      /* drawer, menu, dialog        */
+    --motion-page:       var(--dur-slow);    /* route change, big reveal    */
+    --motion-ease:       var(--ease-out-quart);
+    --motion-ease-exit:  var(--ease-in-quad);
+    --motion-stagger:    var(--stagger-base);
+
+    /* === MEDIA TREATMENT ================================================
+       The photographic grade, expressed as CSS where possible. Heavy
+       treatment belongs in the asset pipeline, not the browser — these are
+       for consistency of the last 5%.
+       ==================================================================== */
+    --media-filter:        none;
+    --media-filter-hover:  none;
+    --media-scrim:         linear-gradient(to top, magenta, transparent);
+    --media-ratio-hero:    var(--ratio-wide);
+    --media-ratio-card:    var(--ratio-portrait);
+    --media-ratio-mobile:  var(--ratio-portrait);
+  }
+}
+
+/* ==========================================================================
+   CONTRACT CHECK
+   Paste into the browser console on any page to find unfilled tokens.
+   Ship-blocking: the result must be an empty array.
+
+   [...document.styleSheets].flatMap(s => { try { return [...s.cssRules] }
+     catch { return [] } })
+     .flatMap(r => r.style ? [...r.style] : [])
+     .filter(p => p.startsWith('--'))
+     .filter(p => getComputedStyle(document.documentElement)
+       .getPropertyValue(p).match(/magenta|REPLACE-ME/i))
+   ========================================================================== */
