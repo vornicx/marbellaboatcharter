@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
-
+Disallow: /control/
+Disallow: /api/
 Sitemap: https://marbellaboatcharter.com/sitemap.xml
