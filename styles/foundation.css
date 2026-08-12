@@ -1,1 +1,319 @@
-/* ==========================================================================\n   ARCHIC FOUNDATION TOKENS\n   --------------------------------------------------------------------------\n   Universal primitives. Copied verbatim into every project. NEVER EDITED.\n\n   Nothing here may presume a brand. No colour values, no typefaces, no radius\n   values, no shadow values. If you want to change something in this file for\n   a client, the change belongs in brand.css.\n\n   Test for anything added here: would it be equally true for a Michelin\n   restaurant, a private-equity firm, a surf brand and an internal CRM?\n   ========================================================================== */\n\n@layer archic.foundation {\n  :root {\n    --space-0:  0;\n    --space-px: 1px;\n    --space-1:  0.25rem;\n    --space-2:  0.5rem;\n    --space-3:  0.75rem;\n    --space-4:  1rem;\n    --space-5:  1.25rem;\n    --space-6:  1.5rem;\n    --space-8:  2rem;\n    --space-10: 2.5rem;\n    --space-12: 3rem;\n    --space-16: 4rem;\n    --space-20: 5rem;\n    --space-24: 6rem;\n    --space-32: 8rem;\n    --space-40: 10rem;\n    --space-48: 12rem;\n    --space-60: 15rem;\n    --space-80: 20rem;\n\n    --rhythm-tight:      clamp(3rem,  6vw,  4rem);\n    --rhythm-normal:     clamp(4.5rem, 9vw,  6rem);\n    --rhythm-generous:   clamp(6rem,  13vw, 9rem);\n    --rhythm-monumental: clamp(8rem,  18vw, 12.5rem);\n\n    --container-xs:   30rem;\n    --container-sm:   40rem;\n    --container-md:   56rem;\n    --container-lg:   72rem;\n    --container-xl:   88rem;\n    --container-2xl: 104rem;\n    --container-full: 100%;\n\n    --measure-tight:  45ch;\n    --measure-base:   68ch;\n    --measure-wide:   80ch;\n    --gutter: clamp(1.25rem, 5vw, 4rem);\n\n    --bp-xs:  20rem;\n    --bp-sm:  30rem;\n    --bp-md:  48rem;\n    --bp-lg:  64rem;\n    --bp-xl:  80rem;\n    --bp-2xl: 96rem;\n    --bp-3xl: 120rem;\n\n    --grid-cols-mobile:  4;\n    --grid-cols-tablet:  8;\n    --grid-cols-desktop: 12;\n    --grid-gutter: clamp(1rem, 2vw, 2rem);\n\n    --fs-2xs: clamp(0.6875rem, 0.68rem + 0.04vw, 0.75rem);\n    --fs-xs:  clamp(0.75rem,  0.73rem + 0.10vw, 0.8125rem);\n    --fs-sm:  clamp(0.875rem, 0.86rem + 0.10vw, 0.9375rem);\n    --fs-md:  clamp(1rem,     0.97rem + 0.15vw, 1.0625rem);\n    --fs-lg:  clamp(1.125rem, 1.08rem + 0.25vw, 1.25rem);\n    --fs-xl:  clamp(1.375rem, 1.30rem + 0.35vw, 1.5rem);\n    --fs-2xl: clamp(1.625rem, 1.50rem + 0.65vw, 2rem);\n    --fs-3xl: clamp(2rem,     1.75rem + 1.25vw, 2.75rem);\n    --fs-4xl: clamp(2.5rem,   2.00rem + 2.50vw, 3.75rem);\n    --fs-5xl: clamp(3rem,     2.20rem + 4.00vw, 5rem);\n    --fs-6xl: clamp(3.5rem,   2.30rem + 6.00vw, 6.75rem);\n\n    --lh-display: 1.0;\n    --lh-heading: 1.15;\n    --lh-title:   1.3;\n    --lh-body:    1.6;\n    --lh-relaxed: 1.75;\n\n    --track-display: -0.025em;\n    --track-heading: -0.015em;\n    --track-title:   -0.005em;\n    --track-body:     0em;\n    --track-small:    0.01em;\n    --track-caps:     0.08em;\n\n    --dur-instant: 80ms;\n    --dur-fast:    140ms;\n    --dur-base:    240ms;\n    --dur-md:      380ms;\n    --dur-slow:    620ms;\n    --dur-cinema:  980ms;\n    --dur-exit-ratio: 0.6;\n\n    --ease-linear:      linear;\n    --ease-out-quad:    cubic-bezier(0.33, 1, 0.68, 1);\n    --ease-out-quart:   cubic-bezier(0.25, 1, 0.5, 1);\n    --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);\n    --ease-in-quad:     cubic-bezier(0.55, 0, 0.85, 0.45);\n    --ease-in-expo:     cubic-bezier(0.7, 0, 0.84, 0);\n    --ease-both-quart:  cubic-bezier(0.76, 0, 0.24, 1);\n    --ease-both-soft:   cubic-bezier(0.65, 0, 0.35, 1);\n    --ease-spring-soft: cubic-bezier(0.34, 1.4, 0.64, 1);\n\n    --stagger-tight:  40ms;\n    --stagger-base:   70ms;\n    --stagger-loose: 110ms;\n\n    --z-below:       -1;\n    --z-base:         0;\n    --z-raised:      10;\n    --z-sticky:     100;\n    --z-header:     200;\n    --z-overlay:    300;\n    --z-drawer:     400;\n    --z-dialog:     500;\n    --z-popover:    600;\n    --z-tooltip:    700;\n    --z-toast:      800;\n    --z-max:        900;\n\n    --radius-none: 0;\n    --radius-xs:   0;\n    --radius-sm:   0;\n    --radius-md:   0;\n    --radius-lg:   0;\n    --radius-xl:   0;\n    --radius-full: 9999px;\n\n    --border-hairline: 0.5px;\n    --border-thin:     1px;\n    --border-medium:   2px;\n    --border-thick:    3px;\n\n    --focus-width:  2px;\n    --focus-offset: 2px;\n    --target-min:          44px;\n    --target-min-pointer:  32px;\n    --target-gap:           8px;\n\n    --ratio-square:    1 / 1;\n    --ratio-portrait:  4 / 5;\n    --ratio-tall:      2 / 3;\n    --ratio-editorial: 3 / 4;\n    --ratio-classic:   4 / 3;\n    --ratio-photo:     3 / 2;\n    --ratio-wide:     16 / 9;\n    --ratio-cinema:  2.39 / 1;\n    --ratio-panorama:  3 / 1;\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    :root {\n      --dur-instant: 1ms;\n      --dur-fast:    1ms;\n      --dur-base:    1ms;\n      --dur-md:      1ms;\n      --dur-slow:    1ms;\n      --dur-cinema:  1ms;\n      --stagger-tight: 0ms;\n      --stagger-base:  0ms;\n      --stagger-loose: 0ms;\n    }\n    *, *::before, *::after {\n      animation-duration: 1ms !important;\n      animation-iteration-count: 1 !important;\n      transition-duration: 1ms !important;\n      scroll-behavior: auto !important;\n    }\n  }\n\n  *, *::before, *::after { box-sizing: border-box; }\n  html {\n    -webkit-text-size-adjust: 100%;\n    text-size-adjust: 100%;\n    scroll-behavior: smooth;\n  }\n  body {\n    margin: 0;\n    min-height: 100svh;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    text-rendering: optimizeLegibility;\n  }\n  img, picture, video, canvas, svg {\n    display: block;\n    max-width: 100%;\n    height: auto;\n  }\n  input, button, textarea, select {\n    font: inherit;\n    color: inherit;\n  }\n  p, h1, h2, h3, h4, h5, h6, li, dd, dt, figcaption, blockquote {\n    overflow-wrap: break-word;\n  }\n  h1, h2, h3, h4, h5, h6 {\n    margin: 0;\n    text-wrap: balance;\n  }\n  p {\n    margin: 0;\n    text-wrap: pretty;\n  }\n  :focus-visible {\n    outline: var(--focus-width) solid var(--focus, currentColor);\n    outline-offset: var(--focus-offset);\n  }\n  :focus:not(:focus-visible) { outline: none; }\n}\n
+/* ==========================================================================
+   ARCHIC FOUNDATION TOKENS
+   --------------------------------------------------------------------------
+   Universal primitives. Copied verbatim into every project. NEVER EDITED.
+
+   Nothing here may presume a brand. No colour values, no typefaces, no radius
+   values, no shadow values. If you want to change something in this file for
+   a client, the change belongs in brand.css.
+
+   Test for anything added here: would it be equally true for a Michelin
+   restaurant, a private-equity firm, a surf brand and an internal CRM?
+   ========================================================================== */
+
+@layer archic.foundation {
+  :root {
+    /* ----------------------------------------------------------------------
+       SPACING — 4px base. Non-linear at the top: large steps grow faster
+       because perceptual difference requires larger absolute jumps.
+       Brand does not redefine these values; brand chooses which to use.
+       ---------------------------------------------------------------------- */
+    --space-0:  0;
+    --space-px: 1px;
+    --space-1:  0.25rem;   /*   4 */
+    --space-2:  0.5rem;    /*   8 */
+    --space-3:  0.75rem;   /*  12 */
+    --space-4:  1rem;      /*  16 */
+    --space-5:  1.25rem;   /*  20 */
+    --space-6:  1.5rem;    /*  24 */
+    --space-8:  2rem;      /*  32 */
+    --space-10: 2.5rem;    /*  40 */
+    --space-12: 3rem;      /*  48 */
+    --space-16: 4rem;      /*  64 */
+    --space-20: 5rem;      /*  80 */
+    --space-24: 6rem;      /*  96 */
+    --space-32: 8rem;      /* 128 */
+    --space-40: 10rem;     /* 160 */
+    --space-48: 12rem;     /* 192 */
+    --space-60: 15rem;     /* 240 */
+    --space-80: 20rem;     /* 320 */
+
+    /* ----------------------------------------------------------------------
+       SECTION RHYTHM TIERS
+       Fluid vertical spacing between major sections. A page uses AT MOST
+       THREE of these four tiers, and the tier changes only at narrative
+       boundaries. See 02-craft/03-space-and-grid.md.
+       ---------------------------------------------------------------------- */
+    --rhythm-tight:      clamp(3rem,  6vw,  4rem);    /*  48 →  64 */
+    --rhythm-normal:     clamp(4.5rem, 9vw,  6rem);   /*  72 →  96 */
+    --rhythm-generous:   clamp(6rem,  13vw, 9rem);    /*  96 → 144 */
+    --rhythm-monumental: clamp(8rem,  18vw, 12.5rem); /* 128 → 200 */
+
+    /* ----------------------------------------------------------------------
+       CONTAINERS — brand picks which are used, not what they measure.
+       --measure-* are character-based and govern reading comfort (invariant).
+       ---------------------------------------------------------------------- */
+    --container-xs:   30rem;   /*  480 — forms, single-column dialogs      */
+    --container-sm:   40rem;   /*  640 — article body                      */
+    --container-md:   56rem;   /*  896 — text + supporting media           */
+    --container-lg:   72rem;   /* 1152 — standard page container           */
+    --container-xl:   88rem;   /* 1408 — wide editorial / index            */
+    --container-2xl: 104rem;   /* 1664 — near-full, still gutter-protected */
+    --container-full: 100%;    /* full bleed                               */
+
+    --measure-tight:  45ch;
+    --measure-base:   68ch;
+    --measure-wide:   80ch;   /* absolute maximum for body copy */
+
+    /* Gutters — the minimum breathing room at the viewport edge.
+       Never below 20px on mobile: text touching the screen edge is the
+       single cheapest way to look unfinished. */
+    --gutter: clamp(1.25rem, 5vw, 4rem);
+
+    /* ----------------------------------------------------------------------
+       BREAKPOINTS
+       CSS custom properties cannot be used inside @media queries. These exist
+       for JS/container-query consumption and as the single source of truth;
+       the literal values must match the media queries in archetype.css.
+       ---------------------------------------------------------------------- */
+    --bp-xs:  20rem;   /*  320 — narrowest supported device            */
+    --bp-sm:  30rem;   /*  480 — large phone                           */
+    --bp-md:  48rem;   /*  768 — tablet portrait / layout inflection   */
+    --bp-lg:  64rem;   /* 1024 — tablet landscape, small laptop        */
+    --bp-xl:  80rem;   /* 1280 — desktop                               */
+    --bp-2xl: 96rem;   /* 1536 — large desktop                         */
+    --bp-3xl: 120rem;  /* 1920 — cap layout growth beyond this         */
+
+    /* ----------------------------------------------------------------------
+       GRID — column count per tier. Brand/archetype chooses the subdivision
+       logic; the count is structural.
+       ---------------------------------------------------------------------- */
+    --grid-cols-mobile:  4;
+    --grid-cols-tablet:  8;
+    --grid-cols-desktop: 12;
+    --grid-gutter: clamp(1rem, 2vw, 2rem);
+
+    /* ----------------------------------------------------------------------
+       TYPE SCALE — STRUCTURE ONLY
+       These are neutral defaults at a 1.2 ratio. EVERY BRAND OVERRIDES ALL
+       OF THEM. Shipping a project on these values means the typography was
+       never designed. See 02-craft/01-typography.md for the maths.
+       ---------------------------------------------------------------------- */
+    --fs-2xs: clamp(0.6875rem, 0.68rem + 0.04vw, 0.75rem);   /* 11 → 12 */
+    --fs-xs:  clamp(0.75rem,  0.73rem + 0.10vw, 0.8125rem);  /* 12 → 13 */
+    --fs-sm:  clamp(0.875rem, 0.86rem + 0.10vw, 0.9375rem);  /* 14 → 15 */
+    --fs-md:  clamp(1rem,     0.97rem + 0.15vw, 1.0625rem);  /* 16 → 17 */
+    --fs-lg:  clamp(1.125rem, 1.08rem + 0.25vw, 1.25rem);    /* 18 → 20 */
+    --fs-xl:  clamp(1.375rem, 1.30rem + 0.35vw, 1.5rem);     /* 22 → 24 */
+    --fs-2xl: clamp(1.625rem, 1.50rem + 0.65vw, 2rem);       /* 26 → 32 */
+    --fs-3xl: clamp(2rem,     1.75rem + 1.25vw, 2.75rem);    /* 32 → 44 */
+    --fs-4xl: clamp(2.5rem,   2.00rem + 2.50vw, 3.75rem);    /* 40 → 60 */
+    --fs-5xl: clamp(3rem,     2.20rem + 4.00vw, 5rem);       /* 48 → 80 */
+    --fs-6xl: clamp(3.5rem,   2.30rem + 6.00vw, 6.75rem);    /* 56 →108 */
+
+    /* Line-height bands — inverse to size. Invariant relationship,
+       brand may shift within a band but never above --lh-body: 1.5. */
+    --lh-display: 1.0;
+    --lh-heading: 1.15;
+    --lh-title:   1.3;
+    --lh-body:    1.6;
+    --lh-relaxed: 1.75;
+
+    /* Tracking curve — negative as size grows, positive as size shrinks.
+       Brand scales these by a factor; the DIRECTION of the curve is fixed. */
+    --track-display: -0.025em;
+    --track-heading: -0.015em;
+    --track-title:   -0.005em;
+    --track-body:     0em;
+    --track-small:    0.01em;
+    --track-caps:     0.08em;
+
+    /* ----------------------------------------------------------------------
+       MOTION — perceptual physics. Durations are bands, not decoration.
+       Brand selects which band each interaction uses and may adjust the
+       easing personality. See 02-craft/06-motion.md.
+       ---------------------------------------------------------------------- */
+    --dur-instant: 80ms;    /* state flips, checkbox, toggle knob        */
+    --dur-fast:    140ms;   /* hover, focus, press — MUST feel immediate */
+    --dur-base:    240ms;   /* small reveals, tooltips, local changes    */
+    --dur-md:      380ms;   /* drawers, menus, section reveals           */
+    --dur-slow:    620ms;   /* page-level, large media, editorial reveal */
+    --dur-cinema:  980ms;   /* full-frame transitions, Kinetics 5 only   */
+
+    /* Exit is always faster than entry — leaving should never make a user
+       wait. Applied as a multiplier. */
+    --dur-exit-ratio: 0.6;
+
+    /* Easings. Names describe behaviour, not brand.
+       --ease-out-* : entrances (decelerate into place)
+       --ease-in-*  : exits (accelerate away)
+       --ease-both-*: movements that start and end on screen */
+    --ease-linear:      linear;
+    --ease-out-quad:    cubic-bezier(0.33, 1, 0.68, 1);
+    --ease-out-quart:   cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);      /* editorial default */
+    --ease-in-quad:     cubic-bezier(0.55, 0, 0.85, 0.45);
+    --ease-in-expo:     cubic-bezier(0.7, 0, 0.84, 0);
+    --ease-both-quart:  cubic-bezier(0.76, 0, 0.24, 1);     /* cinematic default */
+    --ease-both-soft:   cubic-bezier(0.65, 0, 0.35, 1);
+    --ease-spring-soft: cubic-bezier(0.34, 1.4, 0.64, 1);   /* use sparingly */
+
+    /* Stagger between siblings in a sequence. Above 120ms the group stops
+       reading as a group. */
+    --stagger-tight:  40ms;
+    --stagger-base:   70ms;
+    --stagger-loose: 110ms;
+
+    /* ----------------------------------------------------------------------
+       Z-INDEX — a closed set. Never write an arbitrary z-index in a project.
+       Gaps exist so future layers can be inserted without renumbering.
+       ---------------------------------------------------------------------- */
+    --z-below:       -1;
+    --z-base:         0;
+    --z-raised:      10;
+    --z-sticky:     100;
+    --z-header:     200;
+    --z-overlay:    300;   /* scrims, backdrops              */
+    --z-drawer:     400;
+    --z-dialog:     500;
+    --z-popover:    600;   /* menus, selects, date pickers   */
+    --z-tooltip:    700;
+    --z-toast:      800;
+    --z-max:        900;   /* skip links, dev tooling only   */
+
+    /* ----------------------------------------------------------------------
+       RADIUS — STRUCTURE ONLY. All values are brand-owned; these are the
+       slots. A brand may legitimately set every one of these to 0.
+       ---------------------------------------------------------------------- */
+    --radius-none: 0;
+    --radius-xs:   0;
+    --radius-sm:   0;
+    --radius-md:   0;
+    --radius-lg:   0;
+    --radius-xl:   0;
+    --radius-full: 9999px;
+
+    /* ----------------------------------------------------------------------
+       BORDER WIDTHS — brand chooses which are used and what colour.
+       ---------------------------------------------------------------------- */
+    --border-hairline: 0.5px;  /* renders sub-pixel on 2x+; falls back to 1px */
+    --border-thin:     1px;
+    --border-medium:   2px;
+    --border-thick:    3px;
+
+    /* ----------------------------------------------------------------------
+       ACCESSIBILITY INVARIANTS — not brand-adjustable.
+       Brand controls the LOOK of focus, never its existence or its size.
+       ---------------------------------------------------------------------- */
+    --focus-width:  2px;
+    --focus-offset: 2px;
+    /* WCAG 2.2 SC 2.5.8 (AA) requires 24px. Archic requires 44px on touch —
+       a studio standard deliberately above the legal floor. Pointer-only
+       contexts (dense software tables) may use --target-min-pointer, but the
+       touch breakpoint must restore 44px. See 05-standards/01-accessibility. */
+    --target-min:          44px;
+    --target-min-pointer:  32px;
+    --target-gap:           8px;   /* minimum space between adjacent targets */
+
+    /* ----------------------------------------------------------------------
+       ASPECT RATIOS — the closed set. Using a ratio outside this set is a
+       deliberate art-direction decision recorded in the Art Direction Brief.
+       ---------------------------------------------------------------------- */
+    --ratio-square:    1 / 1;
+    --ratio-portrait:  4 / 5;
+    --ratio-tall:      2 / 3;
+    --ratio-editorial: 3 / 4;
+    --ratio-classic:   4 / 3;
+    --ratio-photo:     3 / 2;
+    --ratio-wide:     16 / 9;
+    --ratio-cinema:  2.39 / 1;
+    --ratio-panorama:  3 / 1;
+  }
+
+  /* ------------------------------------------------------------------------
+     REDUCED MOTION — global, non-negotiable, present in every project.
+     Collapses duration rather than removing transitions entirely, so state
+     changes remain perceptible (an instant jump can be more disorienting
+     than a short fade).
+     ------------------------------------------------------------------------ */
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --dur-instant: 1ms;
+      --dur-fast:    1ms;
+      --dur-base:    1ms;
+      --dur-md:      1ms;
+      --dur-slow:    1ms;
+      --dur-cinema:  1ms;
+      --stagger-tight: 0ms;
+      --stagger-base:  0ms;
+      --stagger-loose: 0ms;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 1ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ------------------------------------------------------------------------
+     BASE RESET — structural only. Contains no appearance decisions.
+     ------------------------------------------------------------------------ */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100svh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Media never overflows and never causes layout shift. */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Inputs inherit type. The default is a 13px system font — the loudest
+     signal of an unfinished interface. */
+  input, button, textarea, select {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* Long unbroken strings (URLs, product codes, German compounds) must never
+     force horizontal scroll. */
+  p, h1, h2, h3, h4, h5, h6, li, dd, dt, figcaption, blockquote {
+    overflow-wrap: break-word;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    text-wrap: balance;   /* prevents headline orphans */
+  }
+
+  p {
+    margin: 0;
+    text-wrap: pretty;    /* prevents paragraph orphans where supported */
+  }
+
+  /* Focus: visible always, styled by brand, never removed. */
+  :focus-visible {
+    outline: var(--focus-width) solid var(--focus, currentColor);
+    outline-offset: var(--focus-offset);
+  }
+
+  /* Suppress the ring for pointer users without removing it for keyboard. */
+  :focus:not(:focus-visible) { outline: none; }
+}
