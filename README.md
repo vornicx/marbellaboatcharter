@@ -2,4 +2,6 @@
 
 Level 5 platform build in progress.
 
-Current public platform includes the full fleet dataset, server-rendered yacht pages, destination/experience/service SEO architecture, enquiry handling, Control foundations and owner-management foundations.
+Public platform: full fleet dataset, SSR yacht pages, SEO/GEO content architecture, comparison tools and enquiry handling.
+
+Operations: Control and owner-management foundations are being expanded next.
