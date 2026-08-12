@@ -1,69 +1,68 @@
 /* ========================================================================== 
    MARBELLA BOAT CHARTER — BRAND LAYER
    Archic Foundation 1.0.0
-   Vector: D4 V2 G4 T2 E4 K2 — Lead Data — Distance 3
-   Archetype: Index + Editorial Spread
-   Fonts: Newsreader/Georgia (display), Inter/Arial (body/functional)
-   Asset mode: representative-with-provenance
-   Contrast verification: run tools/contrast.mjs before release
+   Direction: D5 V3 G5 T2 E3 K1 — Lead Data/Type — Distance 4
+   Archetype: Dossier + Editorial Spread
+   Visual thesis: Coastal navigation office / chart room, not luxury costume.
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap');
 
 @layer archic.brand {
   :root {
-    --brand-water-950: oklch(17% 0.028 238);
-    --brand-water-900: oklch(21% 0.035 238);
-    --brand-water-800: oklch(29% 0.045 236);
-    --brand-water-700: oklch(37% 0.060 232);
-    --brand-water-600: oklch(44% 0.075 228);
-    --brand-sea-glass: oklch(54% 0.090 205);
-    --brand-foam: oklch(97% 0.008 85);
-    --brand-sand: oklch(93% 0.012 82);
-    --brand-steel: oklch(79% 0.012 235);
-    --brand-white: oklch(99% 0.003 90);
-    --brand-error: oklch(39% 0.12 28);
-    --brand-error-bg: oklch(94% 0.025 28);
-    --brand-success: oklch(35% 0.055 155);
-    --brand-success-bg: oklch(94% 0.025 155);
-    --brand-warning: oklch(40% 0.055 75);
-    --brand-warning-bg: oklch(95% 0.030 75);
-    --brand-info: oklch(37% 0.050 225);
-    --brand-info-bg: oklch(94% 0.025 225);
+    --brand-chart: oklch(96.5% 0.010 86);
+    --brand-paper: oklch(98.4% 0.006 88);
+    --brand-ink: oklch(18% 0.025 224);
+    --brand-ink-2: oklch(27% 0.030 224);
+    --brand-sea: oklch(41% 0.075 207);
+    --brand-sea-deep: oklch(29% 0.040 214);
+    --brand-line: oklch(64% 0.018 218);
+    --brand-line-soft: oklch(88% 0.014 215);
+    --brand-signal: oklch(61% 0.155 42);
+    --brand-signal-dark: oklch(49% 0.135 39);
+    --brand-white: oklch(99.6% 0.002 90);
+    --brand-error: oklch(42% 0.135 28);
+    --brand-error-bg: oklch(95% 0.014 28);
+    --brand-success: oklch(38% 0.070 156);
+    --brand-success-bg: oklch(95% 0.020 156);
+    --brand-warning: oklch(44% 0.075 79);
+    --brand-warning-bg: oklch(96% 0.025 79);
+    --brand-info: oklch(39% 0.070 220);
+    --brand-info-bg: oklch(95% 0.020 220);
 
-    --bg-primary: var(--brand-foam);
-    --bg-secondary: var(--brand-sand);
-    --bg-inverse: var(--brand-water-950);
+    --bg-primary: var(--brand-paper);
+    --bg-secondary: var(--brand-chart);
+    --bg-inverse: var(--brand-ink);
     --surface: var(--brand-white);
-    --surface-hover: oklch(95% 0.010 84);
-    --surface-sunken: oklch(92% 0.010 230);
-    --surface-overlay: var(--brand-white);
-    --scrim: oklch(14% 0.025 238 / 0.72);
+    --surface-hover: oklch(95% 0.018 203);
+    --surface-sunken: oklch(93% 0.010 215);
+    --surface-overlay: var(--brand-paper);
+    --scrim: oklch(13% 0.025 224 / 0.76);
 
-    --text-primary: var(--brand-water-950);
-    --text-secondary: oklch(32% 0.032 238);
-    --text-muted: oklch(42% 0.025 238);
-    --text-inverse: var(--brand-foam);
+    --text-primary: var(--brand-ink);
+    --text-secondary: oklch(31% 0.028 224);
+    --text-muted: oklch(43% 0.020 224);
+    --text-inverse: var(--brand-chart);
     --text-on-media: var(--brand-white);
-    --text-accent: oklch(36% 0.050 208);
-    --text-link: var(--brand-water-800);
-    --text-link-hover: var(--brand-water-950);
+    --text-accent: var(--brand-sea-deep);
+    --text-link: var(--brand-sea-deep);
+    --text-link-hover: var(--brand-ink);
 
-    --border-subtle: oklch(84% 0.012 235);
-    --border-strong: oklch(56% 0.025 236);
-    --border-interactive: oklch(53% 0.035 236);
-    --border-focus: var(--brand-water-700);
+    --border-subtle: var(--brand-line-soft);
+    --border-strong: var(--brand-line);
+    --border-interactive: oklch(61% 0.030 218);
+    --border-focus: var(--brand-sea);
 
-    --interactive: var(--brand-water-900);
-    --interactive-hover: var(--brand-water-800);
-    --interactive-active: var(--brand-water-950);
-    --interactive-disabled: oklch(76% 0.010 235);
+    --interactive: var(--brand-ink);
+    --interactive-hover: var(--brand-sea-deep);
+    --interactive-active: oklch(14% 0.023 224);
+    --interactive-disabled: oklch(79% 0.010 218);
     --on-interactive: var(--brand-white);
-    --on-interactive-disabled: oklch(42% 0.020 235);
+    --on-interactive-disabled: oklch(45% 0.016 218);
     --interactive-secondary: transparent;
-    --interactive-secondary-hover: var(--surface-hover);
-    --on-interactive-secondary: var(--text-primary);
+    --interactive-secondary-hover: oklch(94% 0.018 205);
+    --on-interactive-secondary: var(--brand-ink);
 
-    --focus: var(--brand-water-700);
+    --focus: var(--brand-signal-dark);
     --focus-ring-width: var(--focus-width);
     --focus-ring-offset: var(--focus-offset);
 
@@ -76,29 +75,29 @@
     --status-info: var(--brand-info);
     --status-info-bg: var(--brand-info-bg);
 
-    --font-display: 'Newsreader', Georgia, serif;
-    --font-body: 'Inter', Arial, sans-serif;
-    --font-functional: 'Inter', Arial, sans-serif;
-    --weight-display: 500;
+    --font-display: 'Manrope', Arial, sans-serif;
+    --font-body: 'Manrope', Arial, sans-serif;
+    --font-functional: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    --weight-display: 600;
     --weight-body: 400;
     --weight-emphasis: 500;
-    --weight-strong: 600;
+    --weight-strong: 700;
 
-    --fs-2xs: clamp(0.6875rem, 0.68rem + 0.03vw, 0.75rem);
-    --fs-xs: clamp(0.75rem, 0.73rem + 0.08vw, 0.8125rem);
-    --fs-sm: clamp(0.875rem, 0.85rem + 0.10vw, 0.9375rem);
-    --fs-md: clamp(1rem, 0.98rem + 0.10vw, 1.0625rem);
-    --fs-lg: clamp(1.125rem, 1.08rem + 0.22vw, 1.25rem);
-    --fs-xl: clamp(1.375rem, 1.28rem + 0.38vw, 1.625rem);
-    --fs-2xl: clamp(1.75rem, 1.55rem + 0.85vw, 2.375rem);
-    --fs-3xl: clamp(2.25rem, 1.95rem + 1.45vw, 3.25rem);
-    --fs-4xl: clamp(3rem, 2.25rem + 3vw, 5rem);
-    --fs-5xl: clamp(3.5rem, 2.35rem + 4.8vw, 6.75rem);
+    --fs-2xs: clamp(0.68rem, 0.67rem + 0.03vw, 0.74rem);
+    --fs-xs: clamp(0.74rem, 0.72rem + 0.08vw, 0.82rem);
+    --fs-sm: clamp(0.88rem, 0.85rem + 0.10vw, 0.96rem);
+    --fs-md: clamp(1rem, 0.98rem + 0.10vw, 1.08rem);
+    --fs-lg: clamp(1.16rem, 1.10rem + 0.25vw, 1.34rem);
+    --fs-xl: clamp(1.45rem, 1.32rem + 0.55vw, 1.84rem);
+    --fs-2xl: clamp(1.9rem, 1.62rem + 1.05vw, 2.7rem);
+    --fs-3xl: clamp(2.65rem, 2.1rem + 2.1vw, 4.2rem);
+    --fs-4xl: clamp(3.6rem, 2.55rem + 4.1vw, 6.6rem);
+    --fs-5xl: clamp(4.5rem, 2.9rem + 6.4vw, 9.4rem);
 
-    --radius-control: var(--radius-xs);
-    --radius-container: var(--radius-xs);
-    --radius-media: var(--radius-xs);
-    --radius-pill: var(--radius-full);
+    --radius-control: var(--radius-none);
+    --radius-container: var(--radius-none);
+    --radius-media: var(--radius-none);
+    --radius-pill: var(--radius-none);
     --border-width-control: var(--border-thin);
     --border-width-container: var(--border-thin);
     --border-width-divider: var(--border-thin);
@@ -107,33 +106,28 @@
     --elevation-dialog: none;
 
     --control-height-sm: 40px;
-    --control-height-md: 46px;
-    --control-height-lg: 54px;
-    --control-pad-x: 1.25rem;
+    --control-height-md: 48px;
+    --control-height-lg: 56px;
+    --control-pad-x: 1rem;
     --control-pad-y: 0.75rem;
     --control-gap: 0.625rem;
     --control-font-size: var(--fs-sm);
     --safe-area-gutter: 1.25rem;
 
-    --motion-feedback: 110ms;
+    --motion-feedback: 100ms;
     --motion-press: 60ms;
     --motion-local: 180ms;
-    --motion-container: 360ms;
-    --motion-page: 480ms;
-    --motion-ease: cubic-bezier(.22,.72,.22,1);
-    --motion-ease-exit: cubic-bezier(.4,0,1,1);
-    --motion-stagger: 55ms;
+    --motion-container: 300ms;
+    --motion-page: 460ms;
+    --motion-ease: cubic-bezier(.2,.72,.2,1);
+    --motion-ease-exit: cubic-bezier(.5,0,1,1);
+    --motion-stagger: 45ms;
 
-    --media-filter: saturate(0.86) contrast(1.03);
-    --media-filter-hover: saturate(0.96) contrast(1.03);
-    --media-scrim: linear-gradient(90deg, oklch(13% 0.03 238 / 0.72) 0%, oklch(13% 0.03 238 / 0.34) 48%, transparent 78%);
-    --media-ratio-hero: 16 / 9;
-    --media-ratio-card: 4 / 5;
+    --media-filter: saturate(.92) contrast(1.02);
+    --media-filter-hover: saturate(1) contrast(1.02);
+    --media-scrim: linear-gradient(180deg, transparent 38%, oklch(15% 0.025 224 / .66) 100%);
+    --media-ratio-hero: 3 / 2;
+    --media-ratio-card: 3 / 2;
     --media-ratio-mobile: 4 / 5;
-
-    --z-base: 0;
-    --z-sticky: 20;
-    --z-overlay: 40;
-    --z-dialog: 60;
   }
 }

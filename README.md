@@ -1,49 +1,55 @@
 # Marbella Boat Charter × Archic
 
-Production-oriented concept build based on **Archic Design System v1.0.0**.
+Production-oriented project foundation based on **Archic Design System v1.0.0**, with a client-specific visual grammar rather than a shared Archic page template.
 
-## What is implemented
+## v0.2 direction
 
-- Frozen Foundation + semantic contract copied verbatim.
-- Client-specific Brand Layer and Index-led archetype.
-- Responsive home, fleet index, experience architecture, yacht detail and contact/availability page.
-- Filterable fleet with persistent media preview.
-- Accessible navigation and focus states.
-- Custom 4-step charter planner on the home page with custom calendar (no native date control).
-- Reduced-motion behaviour inherited from Foundation.
-- Structured data and semantic page hierarchy.
-- Asset provenance and brand brief.
+The project now treats Marbella Boat Charter as a **Costa del Sol charter operator based in Puerto Banús**, not as a Puerto Banús-only yacht rental site.
 
-## Important mode note
+The visible design system is **Coastal Navigation Office**:
 
-The code is intentionally built beyond a throwaway mock-up, but `project.config.json` remains in `prototype` mode because authorized production photography has not been supplied. That is an asset-rights gate, not a code-quality label. Switch to `production` only after real/authorized fleet assets are verified.
+- coast chart for service area and route logic;
+- course board for itinerary discovery;
+- full fleet register grouped by motor / sailing / fishing / group operations;
+- physical vessel-scale visualisation;
+- technical yacht plate for vessel data, seasonal rates and inclusions;
+- inline Charter Desk that prepares a structured WhatsApp enquiry;
+- service ledger for catering and yacht management / maintenance.
+
+No public page loads the old generic archetype/component CSS layer. Foundation, semantic roles, accessibility and QA tooling remain reusable; client-facing compositions do not.
+
+## Current inventory represented
+
+- 23 motor yachts
+- 2 sailing boats
+- 3 fishing boats
+- 2 group vessels
+
+The data is based on the operator's current public listings and remains subject to client verification before production.
+
+## Production gate
+
+`project.config.json` stays in `prototype` mode because original/high-resolution photography and brand assets have not yet been authorised and verified. This build deliberately avoids presenting unrelated stock yacht photography as if it were the client's real fleet.
+
+Before launch:
+
+1. verify current fleet, rates, VAT, fuel and vessel-specific inclusions with the client;
+2. acquire authorised high-resolution fleet / crew / port photography;
+3. implement native-reviewed Spanish parity;
+4. migrate/review privacy, cookie and booking/legal terms;
+5. connect a booking/CRM backend if the client wants more than the current direct WhatsApp handoff;
+6. run final real-device and network QA.
 
 ## Run locally
-
-From this folder:
 
 ```bash
 python -m http.server 4173
 ```
 
-Then open `http://localhost:4173`.
-
 ## Archic gates
-
-Run against the Archic Design System v1.0 tooling/registry:
 
 ```bash
 node tools/static-audit.mjs .
 node tools/contrast.mjs styles/brand.css
+node /path/to/archic-design-system/tools/validate-contract.mjs styles/brand.css
 ```
-
-`validate-project.mjs` additionally needs the Design System registry (`archic-projects.json`) available in the system root or passed with `--registry`.
-
-## Next production steps
-
-1. Acquire/export original brand marks and authorized high-resolution fleet photography.
-2. Complete fleet data for every current vessel and reconcile VAT/inclusion inconsistencies with the client.
-3. Decide booking destination (existing engine, CRM/API, email, WhatsApp, or Archic Control).
-4. Add native-reviewed Spanish copy and route-level SEO content without duplicating the old SEO-page sprawl.
-5. Wire forms end-to-end and add privacy/cookie/legal content after client/legal review.
-6. Run complete Archic QA on real devices and networks.

@@ -5,31 +5,29 @@
     "slug": "marbella-boat-charter",
     "mode": "prototype",
     "kind": "marketing",
-    "sector": "Private boat and yacht charter in Puerto Banús / Costa del Sol",
+    "sector": "Yacht, sailing, fishing and group charter across the Costa del Sol; base in Puerto Banús",
     "decisionDate": "2026-08-12"
   },
   "direction": {
-    "density": 4,
-    "volume": 2,
-    "geometry": 4,
+    "density": 5,
+    "volume": 3,
+    "geometry": 5,
     "temperature": 2,
-    "era": 4,
-    "kinetics": 2,
+    "era": 3,
+    "kinetics": 1,
     "leadMedium": "Data",
-    "distance": 3,
-    "primaryArchetype": "Index",
+    "distance": 4,
+    "primaryArchetype": "Dossier",
     "secondaryArchetype": "Editorial Spread",
-    "justification": "The business has a large, directly comparable fleet and customers need to resolve capacity, duration and price before emotion. The interface therefore treats the fleet as a typographic index, then shifts into editorial imagery and dossier-like detail at genuine decision boundaries.",
+    "justification": "The business is geographically and operationally broad: a Puerto Banús base serving several Costa del Sol ports, nearly thirty published vessels across four operation types, longer Strait routes, events, catering and yacht management. The interface therefore behaves like a coastal navigation office: chart, register, route atlas, technical plate and charter desk. Archic Foundation remains underneath as a QA contract, while the client-facing component grammar is deliberately unique to this business rather than reusing the Index/hero/card patterns of prior projects.",
     "sectorsUnrelatedToPrevious": false,
-    "archetypeRepeatJustification": ""
+    "archetypeRepeatJustification": "Dossier is expressed through marine operating documents and technical plates, not through a previously shipped visual component set. No client-facing component is intentionally copied from another Archic project."
   },
   "assets": {
-    "policy": "representative-with-provenance",
+    "policy": "verified-client-photography-required-for-production",
     "provenanceFile": "docs/asset-provenance.md",
     "verified": false
   },
-  "foundation": {
-    "version": "1.0.0"
-  },
+  "foundation": { "version": "1.0.0" },
   "exceptions": []
 }

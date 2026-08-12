@@ -1,0 +1,248 @@
+@layer archic.site {
+/* -----------------------------------------------------------------------
+     BASE / TYPE
+     ----------------------------------------------------------------------- */
+  body {
+    margin: 0;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: var(--fs-md);
+    line-height: 1.58;
+  }
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-below);
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, color-mix(in oklch, var(--brand-line-soft) 48%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklch, var(--brand-line-soft) 34%, transparent) 1px, transparent 1px);
+    background-size: 8rem 8rem;
+    mask-image: linear-gradient(to bottom, black, transparent 44rem);
+    opacity: .42;
+  }
+
+a { color: inherit; }
+
+button, input, textarea { font: inherit; }
+
+img { display: block; max-width: 100%; }
+
+::selection { background: var(--brand-signal); color: var(--brand-white); }
+
+.skip-link {
+    position: fixed;
+    z-index: var(--z-dialog);
+    inset: 1rem auto auto 1rem;
+    transform: translateY(-180%);
+    background: var(--brand-ink);
+    color: var(--brand-white);
+    padding: .75rem 1rem;
+    font-family: var(--font-functional);
+    font-size: var(--fs-xs);
+  }
+
+.skip-link:focus { transform: none; }
+
+.shell { width: min(100% - 2 * var(--gutter), 92rem); margin-inline: auto; }
+
+.shell--wide { width: min(100% - 2 * var(--gutter), 108rem); margin-inline: auto; }
+
+.mono { font-family: var(--font-functional); font-variant-numeric: tabular-nums; }
+
+.kicker {
+    margin: 0;
+    font-family: var(--font-functional);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+.display {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: var(--weight-display);
+    line-height: .91;
+    letter-spacing: -.058em;
+    text-wrap: balance;
+  }
+
+.display--xl { font-size: var(--fs-5xl); }
+
+.display--lg { font-size: var(--fs-4xl); }
+
+.display--md { font-size: var(--fs-3xl); }
+
+.lede { margin: 0; max-width: 48rem; font-size: var(--fs-lg); color: var(--text-secondary); }
+
+.micro { margin: 0; font-family: var(--font-functional); font-size: var(--fs-xs); line-height: 1.45; color: var(--text-muted); }
+
+.section { padding-block: clamp(5rem, 10vw, 9rem); }
+
+.section--tight { padding-block: clamp(3rem, 6vw, 5rem); }
+
+/* -----------------------------------------------------------------------
+     NAVIGATION — nautical office rail, not floating luxury header
+     ----------------------------------------------------------------------- */
+  .chart-header {
+    background: var(--brand-paper);
+    border-block-end: 1px solid var(--border-strong);
+  }
+
+.chart-header__top {
+    min-height: 4.75rem;
+    display: grid;
+    grid-template-columns: minmax(15rem, 1fr) auto auto;
+    align-items: stretch;
+    border-inline: 1px solid var(--border-subtle);
+  }
+
+.wordmark {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding-inline: 1.25rem;
+    text-decoration: none;
+    border-inline-end: 1px solid var(--border-subtle);
+  }
+
+.wordmark__plot {
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--brand-ink);
+    font-family: var(--font-functional);
+    font-size: .68rem;
+    letter-spacing: -.08em;
+  }
+
+.wordmark__text { font-weight: 700; letter-spacing: -.035em; }
+
+.header-fix {
+    min-width: 15rem;
+    padding: .72rem 1.15rem;
+    display: grid;
+    align-content: center;
+    gap: .18rem;
+    border-inline-end: 1px solid var(--border-subtle);
+  }
+
+.header-fix span:first-child { font-family: var(--font-functional); font-size: var(--fs-2xs); color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; }
+
+.header-fix strong { font-size: var(--fs-sm); font-weight: 600; }
+
+.availability-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 12rem;
+    padding-inline: 1.2rem;
+    background: var(--brand-signal);
+    color: var(--brand-white);
+    text-decoration: none;
+    font-family: var(--font-functional);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+
+.availability-link:hover { background: var(--brand-signal-dark); }
+
+.chart-nav {
+    display: flex;
+    min-height: 3.1rem;
+    border-inline: 1px solid var(--border-subtle);
+  }
+
+.chart-nav a {
+    min-width: 9rem;
+    padding: .85rem 1.15rem;
+    border-inline-end: 1px solid var(--border-subtle);
+    text-decoration: none;
+    font-family: var(--font-functional);
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--text-secondary);
+  }
+
+.chart-nav a::before { content: attr(data-index); color: var(--brand-signal-dark); margin-inline-end: .6rem; }
+
+.chart-nav a:hover, .chart-nav a[aria-current="page"] { background: var(--brand-ink); color: var(--brand-white); }
+
+.chart-menu { display: none; }
+
+/* -----------------------------------------------------------------------
+     HOME / COAST CHART
+     ----------------------------------------------------------------------- */
+  .chart-hero { border-block-end: 1px solid var(--border-strong); }
+
+.chart-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(23rem, .72fr) minmax(0, 1.28fr);
+    min-height: min(72rem, calc(100svh - 7.85rem));
+    border-inline: 1px solid var(--border-subtle);
+  }
+
+.chart-hero__intro {
+    padding: clamp(3rem, 6vw, 7rem) clamp(2rem, 4vw, 4.5rem) 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-inline-end: 1px solid var(--border-strong);
+  }
+
+.chart-hero__intro .display { max-width: 8.5ch; }
+
+.hero-summary { display: grid; gap: 1.35rem; max-width: 34rem; }
+
+.hero-summary__line {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 1rem;
+    padding-block-start: .85rem;
+    border-block-start: 1px solid var(--border-subtle);
+  }
+
+.hero-summary__line dt { font-family: var(--font-functional); font-size: var(--fs-xs); color: var(--text-muted); text-transform: uppercase; }
+
+.hero-summary__line dd { margin: 0; font-size: var(--fs-sm); color: var(--text-secondary); }
+
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-block-start: 2rem; }
+
+.route-link {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    gap: .75rem;
+    padding-inline: 1rem;
+    background: var(--brand-ink);
+    color: var(--brand-white);
+    text-decoration: none;
+    font-family: var(--font-functional);
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: .035em;
+  }
+
+.route-link::after { content: '↗'; color: var(--brand-signal); }
+
+.route-link--ghost { background: transparent; color: var(--brand-ink); border: 1px solid var(--border-interactive); }
+
+.route-link--ghost::after { color: var(--brand-signal-dark); }
+
+.coast-chart {
+    min-height: 44rem;
+    position: relative;
+    overflow: hidden;
+    background: var(--brand-chart);
+  }
+}
