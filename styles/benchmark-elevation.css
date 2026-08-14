@@ -1,5 +1,26 @@
 /* Benchmark elevation layer — preserves the existing art direction while fixing measurable UX and luxury-positioning gaps. */
 
+.page-home5 h1,
+.page-home5 h2,
+.page-home5 h3{
+  font-family:var(--serif);
+  font-optical-sizing:auto;
+  font-weight:500;
+  font-kerning:normal;
+}
+
+.page-home5 .home5-hero__claim h1,
+.page-home5 .home5-intro__title h2,
+.page-home5 .home5-heading h2,
+.page-home5 .home5-yacht-card h3,
+.page-home5 .home5-signature__card h2,
+.page-home5 .home5-experience__row h3,
+.page-home5 .home5-intelligence__panel h2,
+.page-home5 .home5-owners__copy h2,
+.page-home5 .home5-final h2{
+  letter-spacing:-.026em;
+}
+
 .page-home5 .brand-logo{
   min-height:44px;
   padding-block:8px;
@@ -77,7 +98,7 @@
 .page-home5 .home5-hero__claim h1{
   max-width:10ch;
   font-size:clamp(3.25rem,5.8vw,6.5rem);
-  line-height:.91;
+  line-height:.94;
 }
 
 .page-home5 .home5-hero__claim p{
@@ -202,8 +223,8 @@
     margin:0;
     max-width:8.6ch;
     font-size:clamp(3rem,13vw,4.25rem);
-    line-height:.9;
-    letter-spacing:-.045em;
+    line-height:.94;
+    letter-spacing:-.02em;
     text-wrap:balance;
   }
 
