@@ -1,0 +1,330 @@
+/* Benchmark elevation layer — preserves the existing art direction while fixing measurable UX and luxury-positioning gaps. */
+
+.page-home5 .brand-logo{
+  min-height:44px;
+  padding-block:8px;
+}
+
+.page-home5 .nav a,
+.page-home5 .header-contact,
+.page-home5 .mobile-nav a,
+.page-home5 .footer-nav a,
+.page-home5 .footer-contact a,
+.page-home5 .footer-bottom a{
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+}
+
+.page-home5 .mobile-nav a{
+  width:100%;
+}
+
+.page-home5 .home5-text-link{
+  min-height:44px;
+  padding:.65rem 0;
+  font-size:.75rem;
+  line-height:1.2;
+}
+
+.page-home5 .home5-scroll{
+  min-width:44px;
+  min-height:44px;
+  justify-content:center;
+  font-size:.75rem;
+}
+
+.page-home5 .eyebrow,
+.page-home5 .home5-finder label span,
+.page-home5 .home5-heading__aside span,
+.page-home5 .home5-intro__media span,
+.page-home5 .home5-yacht-card__media span,
+.page-home5 .home5-experience__row span,
+.page-home5 .home5-experience__visual::after,
+.page-home5 .home5-destination small,
+.page-home5 .home5-intelligence__image span,
+.page-home5 .home5-stats span,
+.page-home5 .home5-owner-services{
+  font-size:.75rem;
+}
+
+.page-home5 .home5-yacht-card__meta,
+.page-home5 .home5-signature__points span,
+.page-home5 .home5-experience__row p{
+  font-size:.8rem;
+}
+
+.page-home5 .home5-hero{
+  background-image:
+    linear-gradient(180deg,rgba(3,5,8,.58),rgba(3,5,8,.08) 34%,rgba(3,5,8,.24) 62%,rgba(3,5,8,.78)),
+    linear-gradient(90deg,rgba(3,5,8,.34),rgba(3,5,8,.04) 58%),
+    var(--img-yacht);
+  background-position:center 50%;
+}
+
+.page-home5 .home5-hero::before{
+  background-image:
+    linear-gradient(180deg,rgba(3,5,8,.58),rgba(3,5,8,.08) 34%,rgba(3,5,8,.24) 62%,rgba(3,5,8,.78)),
+    linear-gradient(90deg,rgba(3,5,8,.34),rgba(3,5,8,.04) 58%),
+    var(--img-yacht);
+  background-position:center 50%;
+}
+
+.page-home5 .home5-hero__claim{
+  max-width:52rem;
+}
+
+.page-home5 .home5-hero__claim h1{
+  max-width:10ch;
+  font-size:clamp(3.25rem,5.8vw,6.5rem);
+  line-height:.91;
+}
+
+.page-home5 .home5-hero__claim p{
+  max-width:42rem;
+  color:rgba(255,255,255,.86);
+}
+
+.page-home5 .home5-finder{
+  grid-template-columns:.9fr 1.05fr 1fr 1fr 1.15fr auto;
+}
+
+.page-home5 .home5-finder label{
+  min-width:0;
+}
+
+.page-home5 .home5-finder input[type="date"]{
+  width:100%;
+  min-width:0;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:#0b0d12;
+  font-family:var(--serif);
+  font-size:1.08rem;
+  cursor:pointer;
+}
+
+.page-home5 .home5-finder button{
+  min-height:44px;
+  font-size:.75rem;
+}
+
+.home5-finder-context{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  background:rgba(8,10,14,.9);
+  border-top:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(16px);
+  color:#fff;
+}
+
+.home5-finder-context span{
+  min-height:58px;
+  padding:.8rem 1rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:.12rem;
+  border-right:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.66);
+  font-size:.75rem;
+  line-height:1.35;
+}
+
+.home5-finder-context span:last-child{
+  border-right:0;
+}
+
+.home5-finder-context strong{
+  color:#fff;
+  font-size:.75rem;
+  font-weight:600;
+  letter-spacing:.035em;
+}
+
+.home5-mobile-cta{
+  display:none;
+}
+
+@media(max-width:72rem){
+  .page-home5 .home5-finder{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  .page-home5 .home5-finder button{
+    grid-column:1/-1;
+    min-height:58px;
+  }
+}
+
+@media(max-width:50rem){
+  .page-home5{
+    padding-bottom:74px;
+  }
+
+  .page-home5 .site-header__inner{
+    min-height:4.65rem;
+  }
+
+  .page-home5 .brand-logo img{
+    width:min(12.5rem,58vw);
+  }
+
+  .page-home5 .home5-hero{
+    min-height:100svh;
+    height:auto;
+    background-position:58% center;
+  }
+
+  .page-home5 .home5-hero::before{
+    background-position:58% center;
+    transform:scale(1.01);
+  }
+
+  .page-home5 .home5-hero__inner{
+    min-height:100svh;
+    padding-top:6.2rem;
+    padding-bottom:.8rem;
+    justify-content:flex-end;
+  }
+
+  .page-home5 .home5-hero__claim{
+    width:100%;
+    margin:0 0 1.15rem;
+    text-align:left;
+  }
+
+  .page-home5 .home5-hero__claim .eyebrow{
+    margin-bottom:.65rem;
+  }
+
+  .page-home5 .home5-hero__claim h1{
+    margin:0;
+    max-width:8.6ch;
+    font-size:clamp(3rem,13vw,4.25rem);
+    line-height:.9;
+    letter-spacing:-.045em;
+    text-wrap:balance;
+  }
+
+  .page-home5 .home5-hero__claim p{
+    max-width:34rem;
+    margin:.8rem 0 0;
+    font-size:.92rem;
+    line-height:1.55;
+    color:rgba(255,255,255,.86);
+  }
+
+  .page-home5 .home5-finder{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    min-height:0;
+    box-shadow:0 18px 50px rgba(0,0,0,.28);
+  }
+
+  .page-home5 .home5-finder label{
+    min-height:62px;
+    padding:.72rem .9rem;
+    border-bottom:1px solid rgba(11,13,18,.11);
+  }
+
+  .page-home5 .home5-finder label:nth-of-type(even){
+    border-right:0;
+  }
+
+  .page-home5 .home5-finder label span{
+    margin-bottom:.25rem;
+    font-size:.75rem;
+    letter-spacing:.11em;
+  }
+
+  .page-home5 .home5-finder select,
+  .page-home5 .home5-finder input[type="date"]{
+    font-size:.94rem;
+    line-height:1.2;
+  }
+
+  .page-home5 .home5-finder button{
+    grid-column:1/-1;
+    min-height:56px;
+    padding-inline:1rem;
+    font-size:.78rem;
+  }
+
+  .home5-finder-context{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .home5-finder-context span{
+    min-height:50px;
+    padding:.62rem .8rem;
+    font-size:.75rem;
+  }
+
+  .home5-finder-context span:nth-child(2){
+    border-right:0;
+  }
+
+  .home5-finder-context strong{
+    font-size:.75rem;
+  }
+
+  .page-home5 .home5-intro__title h2,
+  .page-home5 .home5-heading h2,
+  .page-home5 .home5-intelligence__panel h2,
+  .page-home5 .home5-owners__copy h2,
+  .page-home5 .home5-final h2{
+    text-wrap:balance;
+  }
+
+  .page-home5 .home5-experience__row{
+    min-height:74px;
+  }
+
+  .page-home5 .home5-destination__arrow{
+    width:44px;
+    height:44px;
+    min-width:44px;
+  }
+
+  .home5-mobile-cta{
+    position:fixed;
+    left:max(.7rem,env(safe-area-inset-left));
+    right:max(.7rem,env(safe-area-inset-right));
+    bottom:max(.65rem,env(safe-area-inset-bottom));
+    z-index:980;
+    display:grid;
+    grid-template-columns:1.35fr .65fr;
+    gap:.5rem;
+    padding:.45rem;
+    background:rgba(8,10,14,.92);
+    border:1px solid rgba(255,255,255,.14);
+    backdrop-filter:blur(20px);
+    box-shadow:0 18px 60px rgba(0,0,0,.3);
+  }
+
+  .home5-mobile-cta a{
+    min-height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:.6rem .8rem;
+    text-decoration:none;
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.055em;
+  }
+
+  .home5-mobile-cta__primary{
+    background:#fff;
+    color:#0b0d12;
+  }
+
+  .home5-mobile-cta__secondary{
+    border:1px solid rgba(255,255,255,.22);
+    color:#fff;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .home5-mobile-cta{backdrop-filter:none}
+}
