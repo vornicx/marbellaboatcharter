@@ -1,0 +1,98 @@
+.home5-proof{
+  padding:clamp(5rem,8vw,8rem) var(--gutter);
+  background:#101218;
+  color:#fff;
+}
+
+.home5-proof__inner{
+  width:min(100%,94rem);
+  margin-inline:auto;
+  display:grid;
+  grid-template-columns:minmax(18rem,.72fr) minmax(0,1.28fr);
+  gap:clamp(3rem,8vw,8rem);
+  align-items:start;
+}
+
+.home5-proof__copy h2{
+  margin:0;
+  max-width:8.5ch;
+  font-family:var(--serif);
+  font-size:clamp(3rem,5.4vw,6rem);
+  font-weight:500;
+  line-height:.92;
+  letter-spacing:-.045em;
+}
+
+.home5-proof__copy p:not(.eyebrow){
+  max-width:31rem;
+  margin:1.35rem 0 0;
+  color:rgba(255,255,255,.64);
+  line-height:1.72;
+}
+
+.home5-proof__facts{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  border-top:1px solid rgba(255,255,255,.18);
+  border-left:1px solid rgba(255,255,255,.18);
+}
+
+.home5-proof__fact{
+  min-height:12.5rem;
+  padding:1.5rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border-right:1px solid rgba(255,255,255,.18);
+  border-bottom:1px solid rgba(255,255,255,.18);
+}
+
+.home5-proof__fact small{
+  font-size:.75rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.48);
+}
+
+.home5-proof__fact strong{
+  display:block;
+  max-width:12ch;
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,3vw,3.1rem);
+  font-weight:500;
+  line-height:.98;
+  letter-spacing:-.025em;
+}
+
+.home5-proof__footer{
+  grid-column:1/-1;
+  display:flex;
+  justify-content:space-between;
+  gap:2rem;
+  align-items:center;
+  padding-top:1.15rem;
+}
+
+.home5-proof__footer p{
+  margin:0;
+  max-width:45rem;
+  color:rgba(255,255,255,.55);
+  font-size:.8rem;
+  line-height:1.6;
+}
+
+.home5-proof__footer .home5-text-link{
+  color:#fff;
+}
+
+@media(max-width:58rem){
+  .home5-proof__inner{grid-template-columns:1fr;gap:2.5rem}
+  .home5-proof__copy h2{max-width:10ch}
+}
+
+@media(max-width:40rem){
+  .home5-proof{padding-inline:1rem}
+  .home5-proof__facts{grid-template-columns:1fr}
+  .home5-proof__fact{min-height:9.5rem}
+  .home5-proof__footer{align-items:flex-start;flex-direction:column}
+}
