@@ -3,6 +3,7 @@ const qs=(s,r=document)=>r.querySelector(s);const qsa=(s,r=document)=>[...r.quer
 const addStylesheet=(href,key)=>{if(document.querySelector(`link[data-${key}]`))return;const link=document.createElement('link');link.rel='stylesheet';link.href=href;link.setAttribute(`data-${key}`,'true');document.head.appendChild(link);};
 addStylesheet('styles/benchmark-elevation.css','benchmark-elevation');
 addStylesheet('styles/real-fleet-media.css','real-fleet-media');
+addStylesheet('styles/home-proof.css','home-proof');
 
 document.title='Marbella Boat Charter | Private Yacht Charter';
 
@@ -46,7 +47,7 @@ if(finder){
   const context=document.createElement('div');
   context.className='home5-finder-context';
   context.setAttribute('aria-label','Charter service reassurance');
-  context.innerHTML='<span><strong>15+ years local experience</strong>Marbella and Puerto Banús</span><span><strong>Real availability</strong>checked directly by the team</span><span><strong>Qualified skipper</strong>included with charters</span><span><strong>Vessel-specific quote</strong>clear inclusions before confirmation</span>';
+  context.innerHTML='<span><strong>15+ years local experience</strong>Marbella and Puerto Banús</span><span><strong>Real availability</strong>checked directly by the team</span><span><strong>Qualified skipper</strong>included with charters</span><span><strong>Sunseeker 68 · from €4,375 / 4h</strong>low season · 21% VAT excluded</span>';
   finder.insertAdjacentElement('afterend',context);
 
   finder.addEventListener('submit',event=>{
@@ -56,6 +57,14 @@ if(finder){
     for(const [key,value] of data.entries()){if(value)params.set(key,String(value));}
     location.href=`booking.html?${params.toString()}`;
   });
+}
+
+const selectionSection=qs('.home5-selection')?.closest('section');
+if(selectionSection&&!qs('.home5-proof')){
+  const proof=document.createElement('section');
+  proof.className='home5-proof home5-reveal';
+  proof.innerHTML='<div class="home5-proof__inner"><div class="home5-proof__copy"><p class="eyebrow eyebrow--light">Published charter detail · Sunseeker 68</p><h2>Know what sits behind the rate.</h2><p>A premium enquiry should not depend on vague luxury language. This is one real flagship charter from the current fleet, with its published operating detail visible before you enquire.</p></div><div><div class="home5-proof__facts"><div class="home5-proof__fact"><small>Low season · 4 hours</small><strong>€4,375 published rate</strong></div><div class="home5-proof__fact"><small>Crew</small><strong>Skipper + deckhand</strong></div><div class="home5-proof__fact"><small>Fuel allowance · 4 hours</small><strong>30 miles included</strong></div><div class="home5-proof__fact"><small>On board</small><strong>Drinks, fruit, snacks + watersports</strong></div></div><div class="home5-proof__footer"><p>Sunseeker 68 published terms: low season September–June. July–August is €5,000 for 4 hours. 21% VAT and mooring in other ports are excluded.</p><a class="home5-text-link" href="/yachts/sunseeker-68-sport-yacht">View Sunseeker 68</a></div></div></div>';
+  selectionSection.insertAdjacentElement('afterend',proof);
 }
 
 if(!qs('.home5-mobile-cta')){
