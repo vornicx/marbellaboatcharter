@@ -1,0 +1,88 @@
+.page-home5 .home5-hero{
+  background:#080b10;
+}
+
+.page-home5 .home5-hero::before{
+  inset:0;
+  z-index:1;
+  transform:none;
+  background:
+    linear-gradient(180deg,rgba(3,5,8,.5),rgba(3,5,8,.04) 34%,rgba(3,5,8,.2) 60%,rgba(3,5,8,.78)),
+    linear-gradient(90deg,rgba(3,5,8,.32),rgba(3,5,8,.02) 60%);
+}
+
+.home5-hero__real-media{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 52%;
+}
+
+.page-home5 .home5-intro__media,
+.page-home5 .home5-yacht-card__media{
+  background-color:#d9d8d3;
+}
+
+.home5-real-yacht-image{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .9s cubic-bezier(.2,.72,.2,1);
+}
+
+.home5-intro__media .home5-real-yacht-image{
+  object-position:center 54%;
+}
+
+.home5-yacht-card:nth-child(1) .home5-real-yacht-image{
+  object-position:center 52%;
+}
+
+.home5-yacht-card:nth-child(2) .home5-real-yacht-image{
+  object-position:center 48%;
+}
+
+.home5-intro__media::after,
+.home5-yacht-card__media::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(3,5,8,.01) 48%,rgba(3,5,8,.48));
+}
+
+.home5-intro__media span,
+.home5-yacht-card__media span{
+  z-index:2;
+}
+
+.home5-yacht-card:hover .home5-real-yacht-image{
+  transform:scale(1.018);
+}
+
+@media(max-width:50rem){
+  .home5-hero__real-media{
+    object-position:58% center;
+  }
+
+  .home5-intro__media .home5-real-yacht-image{
+    object-position:58% center;
+  }
+
+  .home5-yacht-card:nth-child(1) .home5-real-yacht-image,
+  .home5-yacht-card:nth-child(2) .home5-real-yacht-image{
+    object-position:center;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .home5-real-yacht-image{transition:none}
+  .home5-yacht-card:hover .home5-real-yacht-image{transform:none}
+}
