@@ -1,12 +1,18 @@
 const qs=(s,r=document)=>r.querySelector(s);const qsa=(s,r=document)=>[...r.querySelectorAll(s)];
 
-const elevationStyles=document.createElement('link');
-elevationStyles.rel='stylesheet';
-elevationStyles.href='styles/benchmark-elevation.css';
-elevationStyles.dataset.benchmarkElevation='true';
-document.head.appendChild(elevationStyles);
+const addStylesheet=(href,key)=>{if(document.querySelector(`link[data-${key}]`))return;const link=document.createElement('link');link.rel='stylesheet';link.href=href;link.setAttribute(`data-${key}`,'true');document.head.appendChild(link);};
+addStylesheet('styles/benchmark-elevation.css','benchmark-elevation');
+addStylesheet('styles/real-fleet-media.css','real-fleet-media');
 
 document.title='Marbella Boat Charter | Private Yacht Charter';
+
+const realMedia=[
+  {target:'.home5-hero',className:'home5-hero__real-media',src:'https://marbellaboatcharter.com/wp-content/uploads/2022/04/Sunseeker-68-Sport-Yacht-sail.jpg',alt:'Sunseeker 68 Sport Yacht underway off Marbella',eager:true},
+  {target:'.home5-intro__media',className:'home5-real-yacht-image',src:'https://marbellaboatcharter.com/wp-content/uploads/2022/04/Sunseeker-68-Sport-Yacht-outside.jpg',alt:'Outdoor deck of the Sunseeker 68 Sport Yacht'},
+  {target:'.home5-yacht-card:nth-child(1) .home5-yacht-card__media',className:'home5-real-yacht-image',src:'https://marbellaboatcharter.com/wp-content/uploads/2022/04/Sunseeker-68-Sport-Yacht-sail.jpg',alt:'Sunseeker 68 Sport Yacht in the Mediterranean'},
+  {target:'.home5-yacht-card:nth-child(2) .home5-yacht-card__media',className:'home5-real-yacht-image',src:'https://marbellaboatcharter.com/wp-content/uploads/2022/04/Mangusta-80-sun.jpg',alt:'Mangusta 80 yacht underway off Marbella'}
+];
+realMedia.forEach(item=>{const host=qs(item.target);if(!host||host.querySelector(`.${item.className}`))return;const img=document.createElement('img');img.className=item.className;img.src=item.src;img.alt=item.alt;img.decoding='async';img.loading=item.eager?'eager':'lazy';if(item.eager)img.fetchPriority='high';host.prepend(img);});
 
 qsa('.brand-logo').forEach(link=>{if(!link.getAttribute('aria-label'))link.setAttribute('aria-label','Marbella Boat Charter home');});
 qsa('a,button').forEach(control=>{
